@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:dio/dio.dart';
 import 'package:foodie_fly/controller/api_end_points/end_points.dart';
 import 'package:foodie_fly/controller/api_tokens/tokens.dart';

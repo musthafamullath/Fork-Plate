@@ -16,19 +16,19 @@ class ImageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width,
-      height: height * .3,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Colors.green,
-        image: DecorationImage(
-          image: dish.imageUrl == ''
-              ? const AssetImage('assets/images/categories/dish.jpg')
-                  as ImageProvider
-              : NetworkImage(dish.imageUrl),
-          fit: BoxFit.fill,
-        ),
-      ),
-    );
+  width: width,
+  height: height * .3,
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(20),
+    color: Colors.green,
+    image: DecorationImage(
+      image: dish.imageUrl.isEmpty
+          ?  const AssetImage('assets/icons/restaurant.png')
+          : NetworkImage(dish.imageUrl)as ImageProvider<Object>,
+      fit: BoxFit.fill,
+    ),
+  ),
+);
+
   }
 }

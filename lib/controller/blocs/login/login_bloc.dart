@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:foodie_fly/controller/api_sevices/authentication/api_calling.dart';
 
+// ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
 
 part 'login_event.dart';

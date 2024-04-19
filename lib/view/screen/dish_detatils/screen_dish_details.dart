@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:foodie_fly/model/dish.dart';
 import 'package:foodie_fly/model/seller.dart';
 import 'package:foodie_fly/utils/constants.dart';
+import 'package:foodie_fly/utils/text_styles.dart';
 import 'package:foodie_fly/view/screen/dish_detatils/widget/Restaurant_banner.dart';
+import 'package:foodie_fly/view/screen/dish_detatils/widget/add_to_cart.dart';
 import 'package:foodie_fly/view/screen/dish_detatils/widget/image_container.dart';
 import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/app_bar_widget.dart';
 
 class ScreenDishDetails extends StatelessWidget {
-  ScreenDishDetails({super.key, required this.dish, required this.seller});
+  const ScreenDishDetails(
+      {super.key, required this.dish, required this.seller});
   final Dish dish;
   final Seller seller;
   @override
@@ -35,16 +38,26 @@ class ScreenDishDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SectionHead(heading: dish.name),
-                    SectionHead(heading: '₹ ${dish.price}')
+                    Text(
+                      '₹ ${dish.price}',
+                      style: bigBoldGreen,
+                    )
                   ],
                 ),
                 kHight20,
                 RestaurantBanner(seller: seller),
                 kHight20,
-                Text(dish.description),
+                Text(
+                  dish.description,
+                  style: bigBoldGrey,
+                ),
               ],
             ),
-            
+            AddToCartButton(
+              width: width,
+              height: height,
+              dish: dish,
+            ),
           ],
         ),
       ),

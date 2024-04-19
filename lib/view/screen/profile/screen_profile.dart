@@ -1,13 +1,9 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodie_fly/controller/blocs/profile/profile_bloc.dart';
 import 'package:foodie_fly/utils/constants.dart';
-
-import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
 import 'package:foodie_fly/view/screen/profile/widgets/dialog_box.dart';
-import 'package:foodie_fly/view/screen/profile/widgets/sub_text.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/app_bar_widget.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/button_widget.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/profile_span.dart';

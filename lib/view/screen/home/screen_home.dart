@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:foodie_fly/controller/blocs/offer/offer_bloc.dart';
 import 'package:foodie_fly/controller/blocs/profile/profile_bloc.dart';
 import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/view/screen/home/widgets/categories.dart';
@@ -7,6 +8,7 @@ import 'package:foodie_fly/view/screen/home/widgets/header.dart';
 import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
 import 'package:foodie_fly/view/screen/home/widgets/screen_all_categories.dart';
 import 'package:foodie_fly/view/screen/home/widgets/view_all_widget.dart';
+import 'package:foodie_fly/view/screen/offer/screen_offer.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/search_text_field.dart';
 
 class ScreenHome extends StatelessWidget {
@@ -16,7 +18,7 @@ class ScreenHome extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-
+    context.read<OfferBloc>().add(GetAllOfferEvent());
     context.read<ProfileBloc>().add(GetProfileEvent());
     return Scaffold(
       body: SafeArea(
@@ -42,7 +44,9 @@ class ScreenHome extends StatelessWidget {
                   text: "Categories",
                   buttonName: "View All",
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ScreenAllCategories(),));
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ScreenAllCategories(),
+                    ));
                   },
                 ),
                 CategoriesGridview(height: height, width: width),
@@ -53,8 +57,23 @@ class ScreenHome extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const SectionHead(heading: 'Offers'),
-                    TextButton(onPressed: () {}, child: const Text('View all'))
+                    TextButton(onPressed: () {
+                      
+                    }, child: const Text('View all'))
                   ],
+                ),
+                BlocBuilder<OfferBloc, OfferState>(
+                  builder: (context, state) {
+                    return state.offers.isEmpty
+                    ?
+                    const Center(child: Text("No offers available"),)
+                    :
+                    ScreenOffer(
+                      height: height,
+                      width: width,
+                      offers: state.offers,
+                    );
+                  },
                 ),
               ],
             ),

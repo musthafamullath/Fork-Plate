@@ -34,6 +34,7 @@ class ApiAuthentication {
       if (response.statusCode == 200) {
         SharedPreferences preferences = await SharedPreferences.getInstance();
         preferences.setBool('LOGIN', true);
+        preferences.setBool('ON_BORD', true);
         final body = jsonDecode(response.body) as Map;
         final sharedPreferences = await SharedPreferences.getInstance();
         sharedPreferences.setString('token', body['token']);
@@ -103,6 +104,7 @@ class ApiAuthentication {
       if (response.statusCode == 200) {
         SharedPreferences preferences = await SharedPreferences.getInstance();
         preferences.setBool("LOGIN", true);
+        preferences.setBool('ON_BORD', true);
         final body = jsonDecode(response.body) as Map;
         await saveToken(body['token']);
         return "success";

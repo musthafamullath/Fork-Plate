@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:foodie_fly/controller/api_sevices/authentication/api_calling.dart';
 import 'package:foodie_fly/utils/constants.dart';
@@ -116,8 +118,11 @@ class _ScreenOTPState extends State<ScreenOTP> {
                       }
                       bool value =
                           await ApiAuthentication().otpVerification(otp) as bool;
+                      
                       if (value) {
+                       
                         showSnack(context, green, 'Account created successfully');
+                         
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                           builder: (context) => ScreenMainPage(),
                         ));

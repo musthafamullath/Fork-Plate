@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
 import 'package:foodie_fly/controller/api_sevices/authentication/api_calling.dart';
 import 'package:foodie_fly/model/user.dart';
 

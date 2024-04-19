@@ -1,6 +1,10 @@
+
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:foodie_fly/model/seller.dart';
 import 'package:foodie_fly/utils/constants.dart';
+import 'package:foodie_fly/utils/text_styles.dart';
 import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
 
 class RestaurantBanner extends StatelessWidget {
@@ -13,14 +17,14 @@ class RestaurantBanner extends StatelessWidget {
     return Row(
       children: [
         CircleAvatar(
-          radius: 31,
-          backgroundColor: Colors.green,
+          radius: 32,
+          backgroundColor: green,
           child: CircleAvatar(
             radius: 30,
-            backgroundColor: Colors.white,
+            backgroundColor: white,
             child: Image.asset(
-              'assets/images/icons/restaurant.png',
-              height: 36,
+              'assets/icons/restaurant.png',
+              height: 35,
             ),
           ),
         ),
@@ -30,7 +34,7 @@ class RestaurantBanner extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SectionHead(heading: seller.name),
-            Text(seller.description)
+            Text(seller.description, style: semiBoldGrey,)
           ],
         ),
       ],

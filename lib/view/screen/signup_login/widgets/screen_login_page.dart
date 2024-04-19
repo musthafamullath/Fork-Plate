@@ -105,7 +105,7 @@ class _ScreenLoginPageState extends State<ScreenLoginPage> {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => ScreenForgotPassword(),
+                          builder: (context) => const ScreenForgotPassword(),
                         ),
                       );
                     },

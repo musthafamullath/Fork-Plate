@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodie_fly/model/dish.dart';
 import 'package:foodie_fly/utils/constants.dart';
 
@@ -58,7 +57,7 @@ class DishContainer extends StatelessWidget {
                 backgroundColor: Colors.red,
                 child: IconButton(
                   onPressed: () async {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.favorite,
                     size: 22,
                     color: Colors.red,

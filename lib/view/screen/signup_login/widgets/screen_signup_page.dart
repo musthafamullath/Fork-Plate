@@ -7,7 +7,6 @@ import 'package:foodie_fly/model/user.dart';
 import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/utils/text_styles.dart';
 import 'package:foodie_fly/utils/validaters.dart';
-import 'package:foodie_fly/view/screen/main/screen_main_page.dart';
 import 'package:foodie_fly/view/screen/otp/screen_otp.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/button_widget.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/demo_user.dart';

@@ -6,6 +6,7 @@ import 'package:foodie_fly/utils/text_styles.dart';
 import 'package:foodie_fly/view/screen/category/widgets/dish_container.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/app_bar_widget.dart';
 
+// ignore: must_be_immutable
 class ScreenCategory extends StatelessWidget {
   ScreenCategory({super.key, required this.category});
   Category category;

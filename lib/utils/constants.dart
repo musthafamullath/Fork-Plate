@@ -17,6 +17,7 @@ const divider5 = Divider(thickness: 5, color: Colors.black);
 
 final Color greenPointWithblue = Colors.green.withBlue(300);
 final Color greenPointShade800 = Colors.green.shade800;
+
 const Color red = Colors.red;
 const Color amber = Colors.amber;
 const Color orange = Colors.orange;
