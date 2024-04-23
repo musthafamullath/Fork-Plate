@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:foodie_fly/controller/blocs/address/address_bloc.dart';
 import 'package:foodie_fly/controller/blocs/bottom_navigation/bottom_navigation_bloc.dart';
 import 'package:foodie_fly/controller/blocs/cart/cart_bloc.dart';
 import 'package:foodie_fly/controller/blocs/category/category_bloc.dart';
 import 'package:foodie_fly/controller/blocs/dish/dish_bloc.dart';
+import 'package:foodie_fly/controller/blocs/favorites/favorites_bloc.dart';
 import 'package:foodie_fly/controller/blocs/login/login_bloc.dart';
 import 'package:foodie_fly/controller/blocs/offer/offer_bloc.dart';
+import 'package:foodie_fly/controller/blocs/order/order_bloc.dart';
+import 'package:foodie_fly/controller/blocs/payment/payment_bloc.dart';
 import 'package:foodie_fly/controller/blocs/profile/profile_bloc.dart';
 import 'package:foodie_fly/controller/blocs/restaurant/restaurant_bloc.dart';
 import 'package:foodie_fly/controller/blocs/signup/signup_bloc.dart';
@@ -35,7 +39,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => DishBloc(),),
         BlocProvider(create: (context) => OfferBloc(),),
         BlocProvider(create: (context) => RestaurantBloc(),),
-        BlocProvider(create: (context) => CartBloc(),)
+        BlocProvider(create: (context) => CartBloc(),),
+        BlocProvider(create: (context) => FavoritesBloc(),),
+        BlocProvider(create: (context) => PaymentBloc(),),
+        BlocProvider(create: (context) => AddressBloc(),),
+        BlocProvider(create: (context) => OrderBloc(),)
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

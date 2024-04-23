@@ -20,4 +20,15 @@ class ApiEndPoints {
   static const String getAvailableCoupons = '/coupons/available';
   static const String checkOut = '/cart/checkout';
   static const String verifyPayment = '/order/verifyPayment';
+  static const String addToFavorites = '/addToFavourite/';
+  static const String favourites = '/favourites/';
+  static const String delete = '/delete';
+  static const String getAllFavorites = '/favourites';
+  static const String usersellers = '/user/sellers';
+  static const String addNewAddress = '/profile/addAddress';
+  static const String updateAddress = '/profile/address/';
+  static const String getAllAddresses = '/profile/address';
+  static const String getAddressById = '/profile/address/';
+  static const String getAllOrders = '/orders';
+  static const String getOrderById = '/orders/';
 }

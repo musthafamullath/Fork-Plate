@@ -16,6 +16,8 @@ final class GetAllCartItemsState extends CartState {
       required this.couponCode});
 }
 
+final class AddToCartState extends CartState {}
+
 final class GetAllCartItemsFaildState extends CartState{}
 
 final class GetAllCouponsState extends CartState {

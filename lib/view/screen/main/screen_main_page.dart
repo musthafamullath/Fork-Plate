@@ -14,7 +14,7 @@ class ScreenMainPage extends StatelessWidget {
   final List screens = [
     const ScreenHome(),
     const ScreenRestaurants(),
-    const ScreenCart(),
+    ScreenCart(),
     const ScreenProfile(),
   ];
 

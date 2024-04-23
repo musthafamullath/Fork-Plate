@@ -53,6 +53,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
           couponCode: '',
         ),
       );
+      emit(AddToCartState());
     } else {
       emit(GetAllCartItemsFaildState());
     }
