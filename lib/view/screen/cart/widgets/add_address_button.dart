@@ -21,7 +21,7 @@ class AddAddressButton extends StatelessWidget {
       onPressed: () async {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => ScreenAddresses(couponCode: couponCode??" "),
+            builder: (context) => ScreenAddresses(couponCode: couponCode),
           ),
         );
       }, height: height *1.5/10,

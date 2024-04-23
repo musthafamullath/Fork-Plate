@@ -6,10 +6,10 @@ class Address {
   final String name;
   final String phone;
   final String pinCode;
-  final String state = 'Kerala';
+  final String state;
   final String street;
 
-  Address({
+  Address( {
     required this.addressId,
     required this.userId,
     required this.district,
@@ -18,6 +18,7 @@ class Address {
     required this.phone,
     required this.pinCode,
     required this.street,
+    required this.state,
   });
 
   factory Address.fromJson(Map<String, dynamic> json) {
@@ -29,6 +30,7 @@ class Address {
       name: json['name'],
       phone: json['phone'],
       pinCode: json['pinCode'],
+      state: json['state'],
       street: json['street'],
     );
   }
@@ -40,7 +42,7 @@ class Address {
       'name': address.name,
       'phone': address.phone,
       'pinCode': address.pinCode,
-      'state': 'Kerala',
+      'state': address.state,
       'street': address.street,
     };
     return data;

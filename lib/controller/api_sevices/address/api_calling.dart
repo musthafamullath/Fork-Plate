@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:foodie_fly/controller/api_end_points/end_points.dart';
 import 'package:foodie_fly/controller/api_tokens/tokens.dart';
@@ -7,34 +6,37 @@ import 'package:foodie_fly/model/address.dart';
 
 class AddressApiServices {
   Dio dio = Dio(BaseOptions(baseUrl: ApiEndPoints.baseUrl));
-  //-------------Add Address-----------------------------//
+  
+  //----------------------------- Add Address -----------------------------//
   Future<bool> addAddress(Address address) async {
-    final token = await getToken();
     try {
+      final token = await getToken();
       final response = await dio.post(
         ApiEndPoints.addNewAddress,
+        data: address.toJson(address),
         options: Options(
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': token,
+            'Authorization': 'Bearer $token',
           },
         ),
-        data: address.toJson(address),
       );
-      if (response.statusCode == 200) {
+      if(response.statusCode == 200){
         return true;
+      }else{
+        return false;
       }
-      return false;
     } catch (e) {
-      log(e.toString());
+      log('🎉${e.toString()}');
       return false;
     }
   }
-  //----------------Update Address----------------//
+  
+  //----------------------------- Update Address --------------------------//
   Future<bool> updateAddress(Address address) async {
-    final token = await getToken();
     try {
+      final token = await getToken();
       final response = await dio.put(
         '${ApiEndPoints.updateAddress}${address.addressId}',
         data: address.toJson(address),
@@ -42,13 +44,13 @@ class AddressApiServices {
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': token,
+            'Authorization': 'Bearer $token',
           },
         ),
       );
-      if (response.statusCode == 200) {
+        if(response.statusCode == 200){
         return true;
-      } else {
+      }else{
         return false;
       }
     } catch (e) {
@@ -56,10 +58,11 @@ class AddressApiServices {
       return false;
     }
   }
-  //----------------------Fetch All Address---------------------//
+  
+  //----------------------- Fetch All Addresses ----------------------------//
   Future<List<Address>> fetchAllAddresses() async {
-    final token = await getToken();
     try {
+      final token = await getToken();
       final response = await dio.get(
         ApiEndPoints.getAllAddresses,
         options: Options(
@@ -71,23 +74,19 @@ class AddressApiServices {
         ),
       );
       if (response.statusCode == 200) {
-        final body = response.data as Map;
-        final result = body['addressList'] as List;
-        List<Address> addresses = [];
-        for (int i = 0; i < result.length; i++) {
-          final address = Address.fromJson(result[i]);
-          addresses.add(address);
-        }
-        return addresses;
+        final body = response.data as Map<String, dynamic>;
+        final result = body['addressList'] as List<dynamic>;
+        return result.map((json) => Address.fromJson(json)).toList();
       } else {
         return [];
       }
     } catch (e) {
-      log('👀${e.toString()}');
+      log('👀 ${e.toString()}');
       return [];
     }
   }
-  //----------------Get Address By Id-------------------------//
+  
+  //------------------------- Get Address By Id ---------------------------//
   Future<Address?> getAddressById(int addressId) async {
     try {
       final token = await getToken();
@@ -102,17 +101,15 @@ class AddressApiServices {
         ),
       );
       if (response.statusCode == 200) {
-        final body = response.data as Map;
+        final body = response.data as Map<String, dynamic>;
         final result = body['address'];
-        final address = Address.fromJson(result);
-        return address;
-      }else{
+        return Address.fromJson(result);
+      } else {
         return null;
       }
     } catch (e) {
       log(e.toString());
       return null;
     }
-    
   }
 }

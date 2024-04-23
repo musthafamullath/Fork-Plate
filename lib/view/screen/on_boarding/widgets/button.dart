@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_fly/view/screen/signup_login/screen_login_and_signup.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class NextButton extends StatelessWidget {
   const NextButton({super.key, required this.width, required this.position});

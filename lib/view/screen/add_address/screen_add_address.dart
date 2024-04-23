@@ -11,9 +11,9 @@ import 'package:foodie_fly/view/widgets/function_widgets/snackbar.dart';
 enum Operation { add, edit }
 
 class ScreenAddAddress extends StatefulWidget {
-  const ScreenAddAddress({super.key, required this.operation, this.address});
-  final Operation operation;
-  final Address? address;
+   const ScreenAddAddress({super.key, required this.operation, this.address});
+   final Operation operation;
+   final Address? address;
 
   @override
   State<ScreenAddAddress> createState() => _ScreenAddAddressState();
@@ -26,6 +26,7 @@ class _ScreenAddAddressState extends State<ScreenAddAddress> {
   final streetController = TextEditingController();
   final pinodeController = TextEditingController();
   final mobileController = TextEditingController();
+  final stateController = TextEditingController();
   final districtController = TextEditingController();
   initControllers() {
     if (widget.address != null) {
@@ -130,6 +131,19 @@ class _ScreenAddAddressState extends State<ScreenAddAddress> {
                     return null;
                   },
                 ),
+                 kHight10,
+                TextFieldWidget(
+                  userController: stateController,
+                  label: 'State:',
+                  inputType: TextInputType.name,
+                  obscureText: false,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Enter the State name';
+                    }
+                    return null;
+                  },
+                ),
                 kHight10,
                 TextFieldWidget(
                   userController: districtController,
@@ -159,7 +173,8 @@ class _ScreenAddAddressState extends State<ScreenAddAddress> {
                         name: nameController.text,
                         phone: mobileController.text,
                         pinCode: pinodeController.text,
-                        street: streetController.text,
+                        street: streetController.text, 
+                        state: stateController.text,
                       );
                       if (widget.operation == Operation.add) {
                         context.read<AddressBloc>().add(AddAddressEvent(
