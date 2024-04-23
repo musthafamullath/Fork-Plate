@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:foodie_fly/controller/api_sevices/restaurant/api_calling.dart';
+import 'package:foodie_fly/controller/api_sevices/sellers/api_calling.dart';
+
 import 'package:foodie_fly/controller/blocs/favorites/favorites_bloc.dart';
 import 'package:foodie_fly/model/seller.dart';
 import 'package:foodie_fly/utils/constants.dart';
@@ -37,7 +38,7 @@ class ScreenFavorites extends StatelessWidget {
                           state.dishes.map((dish) => dish.dishId).toList();
                       return InkWell(
                         onTap: () async {
-                          Seller? seller = await RestaurantApiServices()
+                          Seller? seller = await SellerApiServices()
                               .getSellerById(state.dishes[index].sellerId);
                           // ignore: use_build_context_synchronously
                           Navigator.of(context).push(

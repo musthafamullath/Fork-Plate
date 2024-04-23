@@ -83,7 +83,7 @@ class AddressApiServices {
         return [];
       }
     } catch (e) {
-      log(e.toString());
+      log('👀${e.toString()}');
       return [];
     }
   }

@@ -6,7 +6,7 @@ import 'package:foodie_fly/view/screen/cart/screen_cart.dart';
 import 'package:foodie_fly/view/screen/home/screen_home.dart';
 import 'package:foodie_fly/view/screen/main/widgets/salomonbottombar.dart';
 import 'package:foodie_fly/view/screen/profile/screen_profile.dart';
-import 'package:foodie_fly/view/screen/restaurant/screen_restaurant.dart';
+import 'package:foodie_fly/view/screen/restaurants/screen_restaurant.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class ScreenMainPage extends StatelessWidget {

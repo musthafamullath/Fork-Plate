@@ -8,7 +8,7 @@ import 'package:foodie_fly/controller/api_end_points/end_points.dart';
 import 'package:foodie_fly/controller/api_tokens/tokens.dart';
 import 'package:foodie_fly/model/seller.dart';
 
-class RestaurantApiServices {
+class SellerApiServices {
   final Dio dio = Dio(BaseOptions(baseUrl: ApiEndPoints.baseUrl));
   //-----------------fetch All Sellers --------------------//
   Future<List<Seller>> fetchAllSellers() async {

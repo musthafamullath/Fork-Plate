@@ -7,13 +7,12 @@ import 'package:foodie_fly/controller/blocs/cart/cart_bloc.dart';
 import 'package:foodie_fly/controller/blocs/restaurant/restaurant_bloc.dart';
 import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/utils/text_styles.dart';
-import 'package:foodie_fly/view/screen/home/widgets/section_value.dart';
 import 'package:input_quantity/input_quantity.dart';
 import 'package:foodie_fly/view/screen/cart/widgets/add_address_button.dart';
 import 'package:foodie_fly/view/screen/cart/widgets/apply_coupen_container.dart';
 import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
 import 'package:foodie_fly/view/screen/main/screen_main_page.dart';
-import 'package:foodie_fly/view/screen/restaurant/widgets/restaurant_dishes.dart';
+import 'package:foodie_fly/view/screen/restaurants/widgets/restaurant_dishes.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/app_bar_widget.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/item_row.dart';
 
@@ -21,8 +20,8 @@ class ScreenCart extends StatelessWidget {
   ScreenCart({super.key});
 
   final List<int> tips = [20, 30, 50];
-  final int selectedTip = 0;
-  final int total = 0;
+  int selectedTip = 0;
+  int total = 0;
   String couponCode = '';
   int sellerId = 0;
   @override
@@ -94,7 +93,7 @@ class ScreenCart extends StatelessWidget {
                                                         children: [
                                                           Text(
                                                             state is GetAllCartItemsState
-                                                                ? "${state.cartItems[index].name}"
+                                                                ? state.cartItems[index].name
                                                                 : 'Dish name',
                                                             style: boldBlack,
                                                             overflow:

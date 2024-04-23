@@ -5,7 +5,7 @@ import 'package:foodie_fly/controller/blocs/restaurant/restaurant_bloc.dart';
 import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/utils/text_styles.dart';
 import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
-import 'package:foodie_fly/view/screen/restaurant/widgets/restaurant_dishes.dart';
+import 'package:foodie_fly/view/screen/restaurants/widgets/restaurant_dishes.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/app_bar_widget.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/search_text_field.dart';
 

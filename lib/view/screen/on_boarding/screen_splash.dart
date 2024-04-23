@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_fly/utils/constants.dart';
-import 'package:foodie_fly/view/screen/on_boarder.dart/widgets/button.dart';
-import 'package:foodie_fly/view/screen/on_boarder.dart/widgets/image_widget.dart';
-import 'package:foodie_fly/view/screen/on_boarder.dart/widgets/screen_indicator.dart';
-import 'package:foodie_fly/view/screen/on_boarder.dart/widgets/sub_titles.dart';
-import 'package:foodie_fly/view/screen/on_boarder.dart/widgets/title.dart';
+import 'package:foodie_fly/view/screen/on_boarding/widgets/button.dart';
+import 'package:foodie_fly/view/screen/on_boarding/widgets/image_widget.dart';
+import 'package:foodie_fly/view/screen/on_boarding/widgets/screen_indicator.dart';
+import 'package:foodie_fly/view/screen/on_boarding/widgets/sub_titles.dart';
+import 'package:foodie_fly/view/screen/on_boarding/widgets/title.dart';
 
 class ScreenOnBoarding extends StatelessWidget {
   const ScreenOnBoarding({super.key});

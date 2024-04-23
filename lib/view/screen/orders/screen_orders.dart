@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodie_fly/controller/blocs/order/order_bloc.dart';
 import 'package:foodie_fly/model/order.dart';
+import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/view/screen/orders/widgets/all_orders.dart';
 
 class ScreenOrders extends StatelessWidget {
@@ -22,18 +23,53 @@ class ScreenOrders extends StatelessWidget {
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
           ),
           bottom: TabBar(
-            labelColor: Colors.green[900],
-            isScrollable: true,
-            unselectedLabelColor: Colors.white,
+            labelColor: black,
+            labelStyle:
+                const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+            unselectedLabelColor: green,
+            indicatorWeight: 5.5,
+            indicatorColor: white,
+            dividerColor: black,
+            indicatorPadding: const EdgeInsets.fromLTRB(0, 30, 0, 13),
+            indicatorSize: TabBarIndicatorSize.label,
             indicator: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: Colors.green, width: 5),
+              color: Colors.black,
+              borderRadius: BorderRadius.circular(26),
+              border: Border.all(
+                color: Colors.green,
+                width: 7,
+              ),
             ),
-            tabs: const [
-              Tab(text: 'All Orders'),
-              Tab(text: "Delivered"),
-              Tab(text: "Pending"),
+            tabs: [
+              Container(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    color: white,
+                  ),
+                  child: const Tab(
+                    text: "Delivered",
+                  )),
+              Container(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    color: white,
+                  ),
+                  child: const Tab(
+                    text: 'All Orders',
+                  )),
+              Container(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(30)),
+                    color: white,
+                  ),
+                  child: const Tab(
+                    text: "Pending",
+                  )),
+              // Tab(text: ),
+              // Tab(text: ),
             ],
           ),
         ),

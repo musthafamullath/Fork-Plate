@@ -8,7 +8,7 @@ import 'package:foodie_fly/view/screen/home/widgets/header.dart';
 import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
 import 'package:foodie_fly/view/screen/home/widgets/screen_all_categories.dart';
 import 'package:foodie_fly/view/screen/home/widgets/view_all_widget.dart';
-import 'package:foodie_fly/view/screen/offer/screen_offer.dart';
+import 'package:foodie_fly/view/screen/offer_details/screen_offer.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/search_text_field.dart';
 
 class ScreenHome extends StatelessWidget {

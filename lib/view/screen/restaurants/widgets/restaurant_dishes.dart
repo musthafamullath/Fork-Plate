@@ -6,7 +6,7 @@ import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/utils/text_styles.dart';
 import 'package:foodie_fly/view/screen/dish_detatils/screen_dish_details.dart';
 import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
-import 'package:foodie_fly/view/screen/restaurant/widgets/search_text_field.dart';
+import 'package:foodie_fly/view/screen/restaurants/widgets/search_text_field.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/app_bar_widget.dart';
 
 class ScreenRestaurantDishes extends StatelessWidget {

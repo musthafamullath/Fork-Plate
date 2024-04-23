@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/view/screen/main/screen_main_page.dart';
-import 'package:foodie_fly/view/screen/on_boarder.dart/screen_splash.dart';
+import 'package:foodie_fly/view/screen/on_boarding/screen_splash.dart';
 import 'package:foodie_fly/view/screen/signup_login/screen_login_and_signup.dart';
 import 'package:foodie_fly/view/screen/splash/widgets/splash_componense.dart';
 import 'package:shared_preferences/shared_preferences.dart';

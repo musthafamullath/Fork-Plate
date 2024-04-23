@@ -14,66 +14,71 @@ class AddressList extends StatelessWidget {
   final int length;
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemBuilder: (context, index) {
-        return InkWell(
-          onTap: () {
-            context.read<AddressBloc>().add(SelectAddressEvent(index: index));
-          },
-          child: BlocBuilder<AddressBloc, AddressState>(
-            builder: (context, state) {
-              return Container(
-                margin: const EdgeInsets.symmetric(vertical: 4),
-                padding: const EdgeInsets.all(12),
-                width: width,
-                // height: height * .2,
-                decoration: BoxDecoration(
-                  color: state.index == index ? Colors.grey[300] : Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.green),
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return SizedBox(
+      height: 500,
+      child: Expanded(
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemBuilder: (context, index) {
+            return InkWell(
+              onTap: () {
+                context.read<AddressBloc>().add(SelectAddressEvent(index: index));
+              },
+              child: BlocBuilder<AddressBloc, AddressState>(
+                builder: (context, state) {
+                  return Container(
+                    margin: const EdgeInsets.symmetric(vertical: 4),
+                    padding: const EdgeInsets.all(12),
+                    width: width,
+                    // height: width * .2,
+                    decoration: BoxDecoration(
+                      color: state.index == index ? Colors.grey[300] : Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.green),
+                    ),
+                    child: Column(
                       children: [
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Icon(Icons.location_on_outlined,
-                                size: 24, color: Colors.red),
-                            SectionHead(heading: state.addresses[index].name),
+                            Row(
+                              children: [
+                                const Icon(Icons.location_on_outlined,
+                                    size: 24, color: Colors.red),
+                                SectionHead(heading: state.addresses[index].name),
+                              ],
+                            ),
+                            ButtonWidget(
+                              width: width * .4,
+                              text: 'Change',
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => ScreenAddAddress(
+                                      operation: Operation.edit,
+                                      address: state.addresses[index],
+                                    ),
+                                  ),
+                                );
+                              }, height: 2,
+                            )
                           ],
                         ),
-                        ButtonWidget(
-                          width: width * .4,
-                          text: 'Change',
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => ScreenAddAddress(
-                                  operation: Operation.edit,
-                                  address: state.addresses[index],
-                                ),
-                              ),
-                            );
-                          }, height: 2,
+                        kHight10,
+                        Text(
+                          '${state.addresses[index].houseName},  ${state.addresses[index].street},  ${state.addresses[index].pinCode},  ${state.addresses[index].district},  ${state.addresses[index].state}, ${state.addresses[index].phone}',
+                          style:const TextStyle(fontSize: 18),
                         )
                       ],
                     ),
-                    kHight10,
-                    Text(
-                      '${state.addresses[index].houseName},  ${state.addresses[index].street},  ${state.addresses[index].pinCode},  ${state.addresses[index].district},  ${state.addresses[index].state}, ${state.addresses[index].phone}',
-                      style:const TextStyle(fontSize: 18),
-                    )
-                  ],
-                ),
-              );
-            },
-          ),
-        );
-      },
-      itemCount: length,
+                  );
+                },
+              ),
+            );
+          },
+          itemCount: length,
+        ),
+      ),
     );
   }
 }
