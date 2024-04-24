@@ -49,7 +49,7 @@ class AddressList extends StatelessWidget {
                               ],
                             ),
                             ButtonWidget(
-                              width: width * .4,
+                              width: width *6/10,
                               text: 'Change',
                               onPressed: () {
                                 Navigator.of(context).push(
@@ -60,7 +60,7 @@ class AddressList extends StatelessWidget {
                                     ),
                                   ),
                                 );
-                              }, height: 2,
+                              }, height: width *2/10,
                             )
                           ],
                         ),
