@@ -58,6 +58,7 @@ class ScreenCheckout extends StatelessWidget {
                                 ? '₹ ${state.total}'
                                 : '₹ 0'),
                         kHight10,
+                        divider2,
                         const ItemRow(
                             keyString: 'Delivery Charge', value: 'Free'),
                         kHight10,
@@ -150,7 +151,7 @@ class ScreenCheckout extends StatelessWidget {
                           CheckoutEvent(checkOut: checkOut, context: context));
                     }
                   },
-                  height: 2,
+                  height: width *3/10,
                 );
               },
             ),

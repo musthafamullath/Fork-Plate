@@ -184,7 +184,8 @@ class _ScreenAddAddressState extends State<ScreenAddAddress> {
                       } else {
                         context.read<AddressBloc>().add(UpdateAddressEvent(
                             address: addresss, context: context));
-                            showSnack(context, red, "New Address not added");
+                            showSnack(context, green, "New Address not added");
+                            Navigator.of(context).pop();
                       }
                     }
                   }, height: height *1/10,

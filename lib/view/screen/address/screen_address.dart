@@ -70,7 +70,7 @@ class _ScreenAddressesState extends State<ScreenAddresses> {
                                     ],
                                   ),
                                   ButtonWidget(
-                                    width: width * 2 / 10,
+                                    width: width * 6/ 10,
                                     text: 'Change',
                                     onPressed: () {
                                       Navigator.of(context).push(
