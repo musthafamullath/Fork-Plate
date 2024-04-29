@@ -9,7 +9,7 @@ class CartApiService{
   Dio dio = Dio(BaseOptions(baseUrl: ApiEndPoints.baseUrl));
   //-------------------------------Add To Cart--------------------------//
   Future<bool> addToCart(int dishId)async{
-    final token = await getToken();
+    final token = await getUserId();
     try{
       final response = await dio.post(
         '${ApiEndPoints.addToCart}$dishId',
@@ -28,7 +28,7 @@ class CartApiService{
       }
     }
     catch(e){
-      log("👇${e.toString()}");
+      log("👇😍${e.toString()}");
       return false;
     }
   }
@@ -83,7 +83,7 @@ class CartApiService{
   //---------------------Get All Cart Item-----------------------------//
     Future<List<CartItem>> getAllCartItems() async {
     try {
-      final token = await getToken();
+      final token = await getUserId();
       final response = await dio.get(
         ApiEndPoints.getAllCartItems,
         options: Options(
@@ -108,7 +108,7 @@ class CartApiService{
         return [];
       }
     } catch (e) {
-      log("👇${e.toString()}");
+      log("👇🍿${e.toString()}");
       return [];
     }
   }

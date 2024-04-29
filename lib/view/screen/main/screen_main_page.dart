@@ -5,6 +5,7 @@ import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/view/screen/cart/screen_cart.dart';
 import 'package:foodie_fly/view/screen/home/screen_home.dart';
 import 'package:foodie_fly/view/screen/main/widgets/salomonbottombar.dart';
+import 'package:foodie_fly/view/screen/orders/screen_orders.dart';
 import 'package:foodie_fly/view/screen/profile/screen_profile.dart';
 import 'package:foodie_fly/view/screen/restaurants/screen_restaurant.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
@@ -15,6 +16,7 @@ class ScreenMainPage extends StatelessWidget {
     const ScreenHome(),
     const ScreenRestaurants(),
     ScreenCart(),
+    ScreenOrders(),
     const ScreenProfile(),
   ];
 
@@ -41,6 +43,8 @@ class ScreenMainPage extends StatelessWidget {
                   'Restaurant'),
               salomonbottombaritem(
                   const ImageIcon(AssetImage("assets/icons/cart.png")), 'Cart'),
+              salomonbottombaritem(
+                  const ImageIcon(AssetImage("assets/icons/ordericon.png")), 'Orders'),
               salomonbottombaritem(
                   const ImageIcon(AssetImage("assets/icons/profile.png")),
                   'Profile'),

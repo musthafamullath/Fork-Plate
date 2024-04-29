@@ -1,6 +1,5 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodie_fly/controller/api_sevices/address/api_calling.dart';
 import 'package:foodie_fly/model/address.dart';
@@ -72,10 +71,7 @@ class AllOrders extends StatelessWidget {
                           border: Border.all(color: Colors.green),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Image.asset(
-                          'assets/images/icons/check-mark.png',
-                          color: Colors.green[900],
-                        ),
+                        child: Image.asset('assets/icons/check-mark.png'),
                       ),
                       kWidth10,
                       Column(

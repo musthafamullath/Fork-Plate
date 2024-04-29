@@ -7,7 +7,7 @@ class SubText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(color: Colors.grey[700]),
+      style: TextStyle(color: Colors.grey[700],fontSize: 17),
     );
   }
 }

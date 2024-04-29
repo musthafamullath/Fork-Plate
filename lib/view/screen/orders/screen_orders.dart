@@ -18,22 +18,25 @@ class ScreenOrders extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.green,
           centerTitle: true,
-          title: const Text(
-            'Orders',
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
+          title:const Padding(
+            padding:  EdgeInsets.only(bottom:10.0),
+            child:  Text(
+              'Orders',
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900,color: white),
+            ),
           ),
           bottom: TabBar(
             labelColor: black,
             labelStyle:
                 const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
             unselectedLabelColor: green,
-            indicatorWeight: 5.5,
+            indicatorWeight: 20.9,
             indicatorColor: white,
             dividerColor: black,
-            indicatorPadding: const EdgeInsets.fromLTRB(0, 30, 0, 13),
+            indicatorPadding: const EdgeInsets.fromLTRB(0, 30, 0, 20),
             indicatorSize: TabBarIndicatorSize.label,
             indicator: BoxDecoration(
-              color: Colors.black,
+              color: greenPointShade800,
               borderRadius: BorderRadius.circular(26),
               border: Border.all(
                 color: Colors.green,

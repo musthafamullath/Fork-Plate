@@ -1,4 +1,4 @@
-import 'package:animate_do/animate_do.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodie_fly/controller/blocs/restaurant/restaurant_bloc.dart';
@@ -49,8 +49,8 @@ class ScreenRestaurants extends StatelessWidget {
                           children: <Widget>[
                             const SectionHead(heading: "All Restaurants"),
                             kHight10,
-                            FadeInUpBig(
-                              child: ListView.builder(
+                            
+                               ListView.builder(
                                 physics: const NeverScrollableScrollPhysics(),
                                 shrinkWrap: true,
                                 itemCount: 5,
@@ -128,7 +128,7 @@ class ScreenRestaurants extends StatelessWidget {
                                   );
                                 },
                               ),
-                            )
+                            
                           ],
                         ),
                 ],

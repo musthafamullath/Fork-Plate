@@ -9,8 +9,9 @@ class ProfileApiServices {
   Dio dio = Dio(BaseOptions(baseUrl: ApiEndPoints.baseUrl));
 
   Future<Profile?> getUserProfile() async {
-    final token = await getToken();
+    
     try {
+      final token = await getToken();
       final response = await dio.get(
         ApiEndPoints.getUserProfile,
         options: Options(
@@ -25,6 +26,7 @@ class ProfileApiServices {
         final body = response.data as Map;
         final result = body['user'] as Map<String, dynamic>;
         final Profile user = Profile.fromJson(result);
+        await saveUserId(user.userId);
         return user;
       } else {
         return null;

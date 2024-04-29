@@ -1,21 +1,24 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodie_fly/controller/blocs/profile/profile_bloc.dart';
 import 'package:foodie_fly/utils/constants.dart';
+import 'package:foodie_fly/utils/text_styles.dart';
 import 'package:foodie_fly/view/screen/address/screen_address.dart';
 import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
-import 'package:foodie_fly/view/screen/orders/screen_orders.dart';
 import 'package:foodie_fly/view/screen/profile/widgets/dialog_box.dart';
 import 'package:foodie_fly/view/screen/profile/widgets/sub_text.dart';
 import 'package:foodie_fly/view/screen/profile/widgets/updat_profile.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/app_bar_widget.dart';
+import 'package:foodie_fly/view/widgets/class_widgets/profile_span.dart';
 
 class ScreenProfile extends StatelessWidget {
   const ScreenProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.width;
     context.read<ProfileBloc>().add(GetProfileEvent());
     return Scaffold(
         appBar: const PreferredSize(
@@ -24,16 +27,87 @@ class ScreenProfile extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(24),
+            padding: const EdgeInsets.only(left:15,right: 15,top: 15),
             child: BlocBuilder<ProfileBloc, ProfileState>(
               builder: (context, state) {
                 return Column(
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        SectionHead(
-                            heading: state.profile?.firstName ?? 'First name'),
+                        Container(
+                          margin: const EdgeInsets.only(bottom: 10),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: green,
+                              border: Border.all()),
+                          width: size * 7 / 10,
+                          child: Card(
+                            shadowColor: green,
+                            surfaceTintColor: green,
+                            borderOnForeground: false,
+                            child: Padding(
+                              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  kHight20,
+                                  ProfileSpanText(
+                                    indicateText: 'Seller Fast Name:  ',
+                                    valueText: state.profile?.firstName ??
+                                        'First Name',
+                                  ),
+                                  kHight10,
+                                  const Divider(),
+                                  kHight10,
+                                  ProfileSpanText(
+                                    indicateText: "Seller Last Name:  ",
+                                    valueText:
+                                        state.profile?.lastName ?? "Lastname",
+                                  ),
+                                  kHight10,
+                                  const Divider(),
+                                  kHight10,
+                                  ProfileSpanText(
+                                    indicateText: "Email:  ",
+                                    valueText:
+                                        state.profile?.email ?? "Email",
+                                  ),
+                                  kHight10,
+                                  const Divider(),
+                                  kHight10,
+                                  ProfileSpanText(
+                                    indicateText: "Phone Number:  ",
+                                    valueText: state.profile?.phone ??
+                                        "Phone Number",
+                                  ),
+                                  kHight10,
+                                  const Divider(),
+                                  kHight10,
+                                  ProfileSpanText(
+                                    indicateText: "Status:  ",
+                                    valueText:
+                                        (state.profile?.status ?? "Status")
+                                            .toString(),
+                                  ),
+                                  kHight10,
+                                  const Divider(),
+                                  kHight10,
+                                  ProfileSpanText(
+                                    indicateText: "User Id:  ",
+                                    valueText:
+                                        state.profile?.userId.toString() ??
+                                            "User Id",
+                                  ),
+                                  kHight10,
+                                  const Divider(),
+                                  kHight10,
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
                         TextButton(
                             onPressed: () async {
                               Navigator.of(context).push(
@@ -43,18 +117,18 @@ class ScreenProfile extends StatelessWidget {
                                 ),
                               );
                             },
-                            child: const SectionHead(heading: 'EDIT'))
+                            child: Container(
+                                padding: const EdgeInsets.all(7),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: green),
+                                child: const Text(
+                                  "Edit",
+                                  style: boldWhite,
+                                ))),
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        SubText(text: state.profile?.phone ?? 'Mobile Number'),
-                        SubText(text: state.profile?.email ?? 'Email id')
-                      ],
-                    ),
-                    kHight10,
-                    divider5,
+                    divider2,
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -66,7 +140,8 @@ class ScreenProfile extends StatelessWidget {
                               onPressed: () {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
-                                    builder: (context) => const ScreenAddresses(),
+                                    builder: (context) =>
+                                        const ScreenAddresses(),
                                   ),
                                 );
                               },
@@ -74,34 +149,21 @@ class ScreenProfile extends StatelessWidget {
                             )
                           ],
                         ),
-                        const SubText(text: 'Share, Edit & Add new addresses'),
+                        const SubText(text: 'Edit & Add new addresses',),
                         kHight10,
                         divider2,
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const SectionHead(heading: 'Orders'),
+                            const SectionHead(heading: 'LogOut'),
                             IconButton(
                               onPressed: () async {
-                                // await OrdersApiServices().getAllOrders();
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) => const ScreenOrders(),
-                                  ),
-                                );
+                                showDialogBox(context);
                               },
                               icon: const Icon(CupertinoIcons.right_chevron),
                             ),
                           ],
                         ),
-                        kHight10,
-                        divider2,
-                        kHight10,
-                        InkWell(
-                            onTap: () async {
-                              showDialogBox(context);
-                            },
-                            child: const SectionHead(heading: 'Logout')),
                       ],
                     ),
                   ],

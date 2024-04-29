@@ -10,6 +10,7 @@ import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/app_bar_widget.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/button_widget.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/item_row.dart';
+import 'package:foodie_fly/view/widgets/function_widgets/snackbar.dart';
 
 // ignore: must_be_immutable
 class ScreenCheckout extends StatelessWidget {
@@ -126,13 +127,23 @@ class ScreenCheckout extends StatelessWidget {
               }),
             ),
             kHight20,
-            BlocBuilder<PaymentBloc, PaymentState>(
+            BlocConsumer<PaymentBloc, PaymentState>(
+              listener: (context, state) {
+                if (state is CheckOutSuccessState) {
+                  showSnack(context, green, 'Order Placed Successfully');
+                }
+                // else if(state is CheckOutFaildState){
+                //   showSnack(context, green, 'Order Placed faild');
+                // }else{
+
+                // }
+              },
               builder: (context, state) {
                 return ButtonWidget(
                   width: width,
                   text: state.method == 'COD' ? 'Checkout' : 'Proceed to pay',
                   onPressed: () async {
-                    print(state.method);
+                    print('👀${state.method}');
                     if (state.method == 'COD') {
                       final checkOut = CheckOut(
                         addressId: addressId.toString(),
@@ -151,7 +162,7 @@ class ScreenCheckout extends StatelessWidget {
                           CheckoutEvent(checkOut: checkOut, context: context));
                     }
                   },
-                  height: width *3/10,
+                  height: width * 3 / 10,
                 );
               },
             ),

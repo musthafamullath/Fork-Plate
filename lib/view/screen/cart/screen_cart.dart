@@ -7,6 +7,7 @@ import 'package:foodie_fly/controller/blocs/cart/cart_bloc.dart';
 import 'package:foodie_fly/controller/blocs/restaurant/restaurant_bloc.dart';
 import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/utils/text_styles.dart';
+import 'package:foodie_fly/view/widgets/function_widgets/snackbar.dart';
 import 'package:input_quantity/input_quantity.dart';
 import 'package:foodie_fly/view/screen/cart/widgets/add_address_button.dart';
 import 'package:foodie_fly/view/screen/cart/widgets/apply_coupen_container.dart';
@@ -51,7 +52,7 @@ class ScreenCart extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                           const SectionHead(heading: 'Added Items'),
+                            const SectionHead(heading: 'Added Items'),
                             Container(
                               padding: const EdgeInsets.all(18),
                               width: width,
@@ -61,7 +62,17 @@ class ScreenCart extends StatelessWidget {
                               ),
                               child: Column(
                                 children: [
-                                  BlocBuilder<CartBloc, CartState>(
+                                  BlocConsumer<CartBloc, CartState>(
+                                    listener: (context, state) {
+                                      if (state is AddToCartState) {
+                                        showSnack(
+                                            context, green, "Added To Cart");
+                                      } else if (state
+                                          is GetAllCartItemsFaildState) {
+                                        showSnack(
+                                            context, green, "Added To Faild");
+                                      } else {}
+                                    },
                                     builder: (context, state) {
                                       return state is GetAllCartItemsState &&
                                               state.cartItems.isEmpty
@@ -93,7 +104,10 @@ class ScreenCart extends StatelessWidget {
                                                         children: [
                                                           Text(
                                                             state is GetAllCartItemsState
-                                                                ? state.cartItems[index].name
+                                                                ? state
+                                                                    .cartItems[
+                                                                        index]
+                                                                    .name
                                                                 : 'Dish name',
                                                             style: boldBlack,
                                                             overflow:
@@ -396,7 +410,10 @@ class ScreenCart extends StatelessWidget {
                                   ),
                                   kHight30,
                                   AddAddressButton(
-                                      width: width, couponCode: couponCode, height: height,)
+                                    width: width,
+                                    couponCode: couponCode,
+                                    height: height,
+                                  )
                                 ],
                               ),
                             )

@@ -94,7 +94,7 @@ class ScreenUpdateProfile extends StatelessWidget {
                     context.read<ProfileBloc>().add(UpdateUserProfileEvent(
                         profile: profile, context: context));
                   }
-                }, height: 2,
+                }, height: width *2.5/10,
               ),
             ],
           ),

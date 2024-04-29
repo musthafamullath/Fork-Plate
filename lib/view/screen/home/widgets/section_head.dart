@@ -8,10 +8,12 @@ class SectionHead extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
+      
       heading,
       style: bigBoldBlack,
       textDirection: TextDirection.ltr,
       textAlign: TextAlign.center,
+      overflow: TextOverflow.clip,
     );
   }
 }

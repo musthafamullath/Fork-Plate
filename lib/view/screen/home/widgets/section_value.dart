@@ -12,6 +12,7 @@ class SectionValue extends StatelessWidget {
       style: bigBoldGreen,
        textDirection: TextDirection.ltr,
       textAlign: TextAlign.center,
+      overflow: TextOverflow.fade,
     );
   }
 }
