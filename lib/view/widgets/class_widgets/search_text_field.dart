@@ -13,7 +13,8 @@ class SearchTextField extends StatelessWidget {
     return CupertinoSearchTextField(
       padding: const EdgeInsets.all(15),
       placeholder: text,
-      backgroundColor: Colors.green[50],
+      placeholderStyle: const TextStyle(color: white),
+      backgroundColor: Colors.green[100],
       prefixIcon: Padding(
         padding: const EdgeInsets.only(left: 10),
         child: Icon(CupertinoIcons.search, color: greenPointShade800,size: 32,),

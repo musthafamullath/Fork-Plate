@@ -22,13 +22,20 @@ class ViewAllwidget extends StatelessWidget {
       children: [
         Text(
           text,
-          style: boldBlack,
+          style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.black87),
         ),
         InkWell(
             onTap: onTap,
-            child: Text(
-              buttonName,
-              style: semiBoldOrange,
+            child: Container(
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.green[100]
+              ),
+              child: Text(
+                buttonName,
+                style: semiBoldWhite,
+              ),
             )),
       ],
     );

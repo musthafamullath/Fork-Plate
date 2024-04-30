@@ -11,12 +11,12 @@ Future<String> getToken() async {
   return bearer!;
 }
 
-saveUserId(int sellerId)async{
-  final SharedPreferences preferences = await SharedPreferences.getInstance();
-  await preferences.setInt("sellerId", sellerId);
-}
-getUserId()async{
-  final SharedPreferences preferences = await SharedPreferences.getInstance();
-  final sellerId = preferences.getInt("sellerId" );
-  return sellerId;
-}
+// saveUserId(int sellerId)async{
+//   final SharedPreferences preferences = await SharedPreferences.getInstance();
+//   await preferences.setInt("sellerId", sellerId);
+// }
+// getUserId()async{
+//   final SharedPreferences preferences = await SharedPreferences.getInstance();
+//   final sellerId = preferences.getInt("sellerId" );
+//   return sellerId;
+// }

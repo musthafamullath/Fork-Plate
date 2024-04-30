@@ -24,7 +24,7 @@ class AddAddressButton extends StatelessWidget {
             builder: (context) => ScreenAddresses(couponCode: couponCode),
           ),
         );
-      }, height: height *1.5/10,
+      }, height: height *1.2/10,
     );
   }
 }

@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Foodie Fly',
         theme: ThemeData(
-          primaryColor: greenPointShade800,
+          primaryColor: Colors.green[100],
           primarySwatch: greenMaterialColor,
           useMaterial3: true,
           fontFamily: 'K2D',

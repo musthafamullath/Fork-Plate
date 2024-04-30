@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie_fly/model/dish.dart';
+import 'package:foodie_fly/utils/constants.dart';
 
 class ImageContainer extends StatelessWidget {
   const ImageContainer({
@@ -20,6 +21,7 @@ class ImageContainer extends StatelessWidget {
   height: height * .3,
   decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(20),
+    border: Border.all(width: 5,color: white),
     color: Colors.green,
     image: DecorationImage(
       image: dish.imageUrl.isEmpty

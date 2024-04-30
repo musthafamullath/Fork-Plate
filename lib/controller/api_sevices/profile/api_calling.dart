@@ -26,7 +26,6 @@ class ProfileApiServices {
         final body = response.data as Map;
         final result = body['user'] as Map<String, dynamic>;
         final Profile user = Profile.fromJson(result);
-        await saveUserId(user.userId);
         return user;
       } else {
         return null;

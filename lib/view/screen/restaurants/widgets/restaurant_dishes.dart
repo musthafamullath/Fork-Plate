@@ -62,12 +62,14 @@ class ScreenRestaurantDishes extends StatelessWidget {
                                 );
                               },
                               child: Container(
+                                
                                 width: width * .8,
                                 height: height * .2,
                                 margin: const EdgeInsets.symmetric(vertical: 8),
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.green),
+                                  border: Border.all(color: grey,width:2),
                                   borderRadius: BorderRadius.circular(20),
+                                  color: Colors.green[100],
                                 ),
                                 child: Row(
                                   mainAxisAlignment:
@@ -116,7 +118,7 @@ class ScreenRestaurantDishes extends StatelessWidget {
                                         height: double.infinity,
                                         decoration: BoxDecoration(
                                           border: Border.all(
-                                              color: Colors.green, width: .1),
+                                              color: white, width: 5),
                                           borderRadius:
                                               BorderRadius.circular(20),
                                           image: DecorationImage(

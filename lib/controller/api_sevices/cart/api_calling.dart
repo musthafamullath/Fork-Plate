@@ -9,7 +9,7 @@ class CartApiService{
   Dio dio = Dio(BaseOptions(baseUrl: ApiEndPoints.baseUrl));
   //-------------------------------Add To Cart--------------------------//
   Future<bool> addToCart(int dishId)async{
-    final token = await getUserId();
+    final token = await getToken();
     try{
       final response = await dio.post(
         '${ApiEndPoints.addToCart}$dishId',
@@ -83,7 +83,7 @@ class CartApiService{
   //---------------------Get All Cart Item-----------------------------//
     Future<List<CartItem>> getAllCartItems() async {
     try {
-      final token = await getUserId();
+      final token = await getToken();
       final response = await dio.get(
         ApiEndPoints.getAllCartItems,
         options: Options(

@@ -17,7 +17,7 @@ class SearchTextFieldForFood extends StatelessWidget {
     return CupertinoSearchTextField(
       padding: const EdgeInsets.all(15),
       placeholder: text,
-      backgroundColor: Colors.green[50],
+      backgroundColor: Colors.green[100],
       prefixIcon: Padding(
         padding: const EdgeInsets.only(left: 10),
         child: Icon(

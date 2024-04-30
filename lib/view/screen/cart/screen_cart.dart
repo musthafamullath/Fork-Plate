@@ -7,8 +7,6 @@ import 'package:foodie_fly/controller/blocs/cart/cart_bloc.dart';
 import 'package:foodie_fly/controller/blocs/restaurant/restaurant_bloc.dart';
 import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/utils/text_styles.dart';
-import 'package:foodie_fly/view/widgets/function_widgets/snackbar.dart';
-import 'package:input_quantity/input_quantity.dart';
 import 'package:foodie_fly/view/screen/cart/widgets/add_address_button.dart';
 import 'package:foodie_fly/view/screen/cart/widgets/apply_coupen_container.dart';
 import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
@@ -16,6 +14,8 @@ import 'package:foodie_fly/view/screen/main/screen_main_page.dart';
 import 'package:foodie_fly/view/screen/restaurants/widgets/restaurant_dishes.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/app_bar_widget.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/item_row.dart';
+import 'package:foodie_fly/view/widgets/function_widgets/snackbar.dart';
+import 'package:input_quantity/input_quantity.dart';
 
 class ScreenCart extends StatelessWidget {
   ScreenCart({super.key});
@@ -31,7 +31,7 @@ class ScreenCart extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     context.read<CartBloc>().add(GetAllCartItemsEvent());
     return Scaffold(
-      backgroundColor: Colors.green[50],
+      backgroundColor: Colors.green[100],
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(90),
         child: AppBarWidget(title: 'Cart'),
@@ -48,7 +48,7 @@ class ScreenCart extends StatelessWidget {
                     )
                   : SingleChildScrollView(
                       child: Padding(
-                        padding: const EdgeInsets.all(24),
+                        padding: const EdgeInsets.all(10),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
@@ -57,7 +57,7 @@ class ScreenCart extends StatelessWidget {
                               padding: const EdgeInsets.all(18),
                               width: width,
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: white,
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Column(
@@ -379,6 +379,7 @@ class ScreenCart extends StatelessWidget {
                             ),
                             kHight20,
                             const SectionHead(heading: 'Add Or Select Address'),
+                            kHight10,
                             Container(
                               width: width,
                               height: height * .25,

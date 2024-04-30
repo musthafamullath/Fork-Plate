@@ -24,43 +24,53 @@ class ScreenDishDetails extends StatelessWidget {
         child: AppBarWidget(title: dish.name),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.all(7.5),
         child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.green[100],
+              borderRadius: BorderRadius.circular(30)
+            ),
+            
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ImageContainer(width: width, height: height, dish: dish),
-                  kHight20,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SectionHead(heading: dish.name),
+                      ImageContainer(width: width, height: height, dish: dish),
+                      kHight20,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SectionHead(heading: dish.name),
+                          Text(
+                            '₹ ${dish.price}',
+                            style: bigBoldGreen,
+                          )
+                        ],
+                      ),
+                      kHight20,
+                      RestaurantBanner(seller: seller),
+                      kHight20,
                       Text(
-                        '₹ ${dish.price}',
-                        style: bigBoldGreen,
-                      )
+                        dish.description,
+                        style: bigBoldGrey,
+                      ),
                     ],
                   ),
-                  kHight20,
-                  RestaurantBanner(seller: seller),
-                  kHight20,
-                  Text(
-                    dish.description,
-                    style: bigBoldGrey,
+                  kHight30,
+                  AddToCartButton(
+                    width: width,
+                    height: height,
+                    dish: dish,
                   ),
                 ],
               ),
-              kHight30,
-              AddToCartButton(
-                width: width,
-                height: height,
-                dish: dish,
-              ),
-            ],
+            ),
           ),
         ),
       ),
