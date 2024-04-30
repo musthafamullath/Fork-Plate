@@ -19,7 +19,7 @@ class ScreenFavorites extends StatelessWidget {
     context.read<FavoritesBloc>().add(GetAllFavoritesEvent());
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(56),
+        preferredSize: Size.fromHeight(90),
         child: AppBarWidget(title: 'Favorites'),
       ),
       body: Padding(
@@ -85,15 +85,16 @@ class ScreenFavorites extends StatelessWidget {
                                       children: [
                                         Text(
                                           state.dishes[index].name,
-                                          style: bigBoldBlack,
+                                          style: semiBoldBlack,
+                                          overflow: TextOverflow.fade,
                                         ),
-                                        Text('₹ ${state.dishes[index].price}',style: bigBoldGreen,)
+                                        Text('₹ ${state.dishes[index].price}',style: boldGreen,)
                                       ],
                                     ),
                                     BlocBuilder<FavoritesBloc, FavoritesState>(
                                       builder: (context, state) {
                                         return CircleAvatar(
-                                          radius: 20,
+                                          radius: 16,
                                           backgroundColor: dishIds.contains(
                                                   state.dishes[index].dishId)
                                               ? red
@@ -108,7 +109,7 @@ class ScreenFavorites extends StatelessWidget {
                                             },
                                             icon: Icon(
                                               Icons.favorite,
-                                              size: 22,
+                                              size: 16,
                                               color: dishIds.contains(
                                                       state.dishes[index].dishId)
                                                   ? white

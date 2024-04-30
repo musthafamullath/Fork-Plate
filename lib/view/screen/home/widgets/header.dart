@@ -24,9 +24,10 @@ class HeaderSection extends StatelessWidget {
               // style: DefaultTextStyle.of(cxt).style,
               children: <TextSpan>[
                 const TextSpan(
-                    text: 'Good evening\n',
+                    text: 'Hello Welcome\n',
                     style: TextStyle(
                       fontSize: 18,
+                      fontWeight: FontWeight.bold,
                       color: black,
                     )),
                 TextSpan(

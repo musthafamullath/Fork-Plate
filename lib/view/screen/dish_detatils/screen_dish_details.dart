@@ -20,45 +20,48 @@ class ScreenDishDetails extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(56),
+        preferredSize: const Size.fromHeight(90),
         child: AppBarWidget(title: dish.name),
       ),
       body: Padding(
         padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ImageContainer(width: width, height: height, dish: dish),
-                kHight20,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SectionHead(heading: dish.name),
-                    Text(
-                      '₹ ${dish.price}',
-                      style: bigBoldGreen,
-                    )
-                  ],
-                ),
-                kHight20,
-                RestaurantBanner(seller: seller),
-                kHight20,
-                Text(
-                  dish.description,
-                  style: bigBoldGrey,
-                ),
-              ],
-            ),
-            AddToCartButton(
-              width: width,
-              height: height,
-              dish: dish,
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ImageContainer(width: width, height: height, dish: dish),
+                  kHight20,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SectionHead(heading: dish.name),
+                      Text(
+                        '₹ ${dish.price}',
+                        style: bigBoldGreen,
+                      )
+                    ],
+                  ),
+                  kHight20,
+                  RestaurantBanner(seller: seller),
+                  kHight20,
+                  Text(
+                    dish.description,
+                    style: bigBoldGrey,
+                  ),
+                ],
+              ),
+              kHight30,
+              AddToCartButton(
+                width: width,
+                height: height,
+                dish: dish,
+              ),
+            ],
+          ),
         ),
       ),
     );

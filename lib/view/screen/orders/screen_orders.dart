@@ -19,7 +19,7 @@ class ScreenOrders extends StatelessWidget {
           backgroundColor: Colors.green,
           centerTitle: true,
           title:const Padding(
-            padding:  EdgeInsets.only(bottom:10.0),
+            padding:  EdgeInsets.only(bottom:5.0,top: 10),
             child:  Text(
               'Orders',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900,color: white),

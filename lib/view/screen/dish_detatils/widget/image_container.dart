@@ -25,7 +25,7 @@ class ImageContainer extends StatelessWidget {
       image: dish.imageUrl.isEmpty
           ?  const AssetImage('assets/icons/restaurant.png')
           : NetworkImage(dish.imageUrl)as ImageProvider<Object>,
-      fit: BoxFit.fill,
+      fit: BoxFit.cover,
     ),
   ),
 );

@@ -33,7 +33,7 @@ class ScreenCart extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.green[50],
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(56),
+        preferredSize: Size.fromHeight(90),
         child: AppBarWidget(title: 'Cart'),
       ),
       body: BlocBuilder<CartBloc, CartState>(

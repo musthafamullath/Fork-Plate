@@ -27,7 +27,7 @@ class ScreenUpdateProfile extends StatelessWidget {
     // final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(56),
+        preferredSize: Size.fromHeight(90),
         child: AppBarWidget(title: 'Update Profile'),
       ),
       body: Padding(

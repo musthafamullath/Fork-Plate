@@ -22,7 +22,7 @@ class ScreenProfile extends StatelessWidget {
     context.read<ProfileBloc>().add(GetProfileEvent());
     return Scaffold(
         appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(56),
+          preferredSize: Size.fromHeight(90),
           child: AppBarWidget(title: 'Profile'),
         ),
         body: SingleChildScrollView(

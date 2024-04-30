@@ -19,7 +19,7 @@ class ScreenRestaurants extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(70),
+        preferredSize: Size.fromHeight(90),
         child: AppBarWidget(title: "Restaurants"),
       ),
       body: SingleChildScrollView(
@@ -53,7 +53,7 @@ class ScreenRestaurants extends StatelessWidget {
                                ListView.builder(
                                 physics: const NeverScrollableScrollPhysics(),
                                 shrinkWrap: true,
-                                itemCount: 5,
+                                itemCount: state.restaurants.length,
                                 itemBuilder: (context, index) {
                                   return InkWell(
                                     onTap: () {
