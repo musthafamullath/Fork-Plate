@@ -6,20 +6,20 @@ class GetAllCartItemsEvent extends CartEvent {}
 
 class AddToCartEvent extends CartEvent {
   final int dishId;
- 
-  AddToCartEvent({required this.dishId, required BuildContext context,});
+  final BuildContext context;
+  AddToCartEvent({required this.dishId, required this.context});
 }
 
 class DecreaseCartEvent extends CartEvent {
   final int dishId;
-  
-  DecreaseCartEvent({required this.dishId, required BuildContext context, });
+  final BuildContext context;
+  DecreaseCartEvent({required this.dishId, required this.context});
 }
 
 class DeleteItemFromCartEvent extends CartEvent {
   final int dishId;
- 
-  DeleteItemFromCartEvent({required this.dishId, required BuildContext context,});
+  final BuildContext context;
+  DeleteItemFromCartEvent({required this.dishId, required this.context});
 }
 
 class AddTipEvent extends CartEvent {
@@ -38,6 +38,6 @@ class RedeemCouponEvent extends CartEvent {
 
 class CheckoutEvent extends CartEvent {
   final CheckOut checkOut;
-
-  CheckoutEvent({required this.checkOut, required BuildContext context,});
+  final BuildContext context;
+  CheckoutEvent({required this.checkOut, required this.context});
 }

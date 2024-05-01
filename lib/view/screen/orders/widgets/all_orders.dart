@@ -49,13 +49,12 @@ class AllOrders extends StatelessWidget {
             },
             child: Container(
               width: width,
-              // height: height * .25,
               padding: const EdgeInsets.all(12),
               margin: const EdgeInsets.all(4),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Colors.green[100],
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.green),
+                border: Border.all(color: Colors.grey.withOpacity(0.1),width: 5),
               ),
               child: Column(
                 children: [
@@ -68,7 +67,7 @@ class AllOrders extends StatelessWidget {
                         height: height * .08,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.green),
+                          border: Border.all(color: Colors.grey.withOpacity(0.5),width: 3),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Image.asset('assets/icons/check-mark.png'),
