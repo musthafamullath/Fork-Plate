@@ -28,7 +28,7 @@ class ScreenCheckout extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(56),
+        preferredSize: Size.fromHeight(90),
         child: AppBarWidget(title: 'Payment'),
       ),
       body: Padding(
@@ -50,6 +50,7 @@ class ScreenCheckout extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: Colors.green),
+                      color: Colors.green[100]
                     ),
                     child: Column(
                       children: [
@@ -95,31 +96,38 @@ class ScreenCheckout extends StatelessWidget {
               children: List.generate(2, (index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: DottedBorder(
-                    radius: const Radius.circular(20),
-                    borderType: BorderType.RRect,
-                    color: Colors.green,
-                    strokeWidth: 2,
-                    dashPattern: const [5, 5],
-                    child: ListTile(
-                      contentPadding: const EdgeInsets.all(8),
-                      title: Text(
-                        index == 0 ? 'Cash On Delivery' : 'Online Payment',
-                        style: boldBlack,
-                      ),
-                      trailing: BlocBuilder<PaymentBloc, PaymentState>(
-                        builder: (context, state) {
-                          return Radio(
-                            value: values[index],
-                            groupValue: state.method,
-                            activeColor: Colors.green,
-                            onChanged: (value) {
-                              context
-                                  .read<PaymentBloc>()
-                                  .add(PaymentMethodEvent(method: value!));
-                            },
-                          );
-                        },
+                  child: Container(
+                    
+                    decoration: BoxDecoration(
+                      color: Colors.green[100],
+                      borderRadius: BorderRadius.circular(15)
+                    ),
+                    child: DottedBorder(
+                      radius: const Radius.circular(20),
+                      borderType: BorderType.RRect,
+                      color: Colors.green,
+                      strokeWidth: 2,
+                      dashPattern: const [5, 5],
+                      child: ListTile(
+                        contentPadding: const EdgeInsets.all(8),
+                        title: Text(
+                          index == 0 ? 'Cash On Delivery' : 'Online Payment',
+                          style: boldGrey,
+                        ),
+                        trailing: BlocBuilder<PaymentBloc, PaymentState>(
+                          builder: (context, state) {
+                            return Radio(
+                              value: values[index],
+                              groupValue: state.method,
+                              activeColor: Colors.green,
+                              onChanged: (value) {
+                                context
+                                    .read<PaymentBloc>()
+                                    .add(PaymentMethodEvent(method: value!));
+                              },
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ),
@@ -132,11 +140,6 @@ class ScreenCheckout extends StatelessWidget {
                 if (state is CheckOutSuccessState) {
                   showSnack(context, green, 'Order Placed Successfully');
                 }
-                // else if(state is CheckOutFaildState){
-                //   showSnack(context, green, 'Order Placed faild');
-                // }else{
-
-                // }
               },
               builder: (context, state) {
                 return ButtonWidget(

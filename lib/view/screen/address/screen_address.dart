@@ -25,7 +25,7 @@ class _ScreenAddressesState extends State<ScreenAddresses> {
     context.read<AddressBloc>().add(GetAllAddressEvent());
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(56),
+        preferredSize: Size.fromHeight(90),
         child: AppBarWidget(title: 'Address'),
       ),
       body: SingleChildScrollView(
@@ -50,7 +50,7 @@ class _ScreenAddressesState extends State<ScreenAddresses> {
                           width: width,
                           decoration: BoxDecoration(
                             color: state.index == index
-                                ? Colors.grey[300]
+                                ? Colors.green[100]
                                 : Colors.white,
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(color: Colors.green),
@@ -63,14 +63,20 @@ class _ScreenAddressesState extends State<ScreenAddresses> {
                                 children: [
                                   Row(
                                     children: [
-                                      const Icon(Icons.location_on_outlined,
-                                          size: 24, color: Colors.red),
+                                      CircleAvatar(
+                                        backgroundColor: black.withOpacity(0.1),
+                                        child: const Icon(
+                                            Icons.location_on_outlined,
+                                            size: 24,
+                                            color: Colors.red),
+                                      ),
+                                      kWidth10,
                                       SectionHead(
                                           heading: state.addresses[index].name),
                                     ],
                                   ),
                                   ButtonWidget(
-                                    width: width * 6/ 10,
+                                    width: width * 6 / 10,
                                     text: 'Change',
                                     onPressed: () {
                                       Navigator.of(context).push(

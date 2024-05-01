@@ -13,16 +13,20 @@ class ScreenLoginRestration extends StatelessWidget {
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize:
-              Size.fromHeight(MediaQuery.of(context).size.height * 1.4 / 10),
+              Size.fromHeight(MediaQuery.of(context).size.height * 1.3 / 10),
           child: AppBar(
             backgroundColor: greenPointShade800,
-            title: const Text(
-              "Foodie Fly",
-              style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
-                  wordSpacing: 1.5),
+            title:const Padding(
+              padding:  EdgeInsets.only(top: 20),
+              child:  Text(
+                "Foodie Fly",
+                style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1,
+                    color: white,
+                    wordSpacing: 1.5),
+              ),
             ),
             centerTitle: true,
             bottom: const TabBar(

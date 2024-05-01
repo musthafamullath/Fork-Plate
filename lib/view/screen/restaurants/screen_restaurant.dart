@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodie_fly/controller/blocs/restaurant/restaurant_bloc.dart';
@@ -124,27 +125,29 @@ class ScreenRestaurants extends StatelessWidget {
                                                         ),
                                                       ),
                                                     ),
-                                                    Container(
-                                                      decoration: BoxDecoration(
-                                                        border: Border.all(
-                                                            width: 2,
-                                                            color: green.withOpacity(0.9)),
-                                                        shape: BoxShape.circle,
-                                                      ),
-                                                      child: CircleAvatar(
-                                                        radius: 20,
-                                                        backgroundColor:
-                                                            Colors.green.withOpacity(0.7),
-                                                        child: Text(
-                                                          state.restaurants[index]
-                                                              .name
-                                                              .substring(0, 1)
-                                                              .toUpperCase(),
-                                                          style:const TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight.bold,
-                                                              fontSize: 27.5,
-                                                              color: white),
+                                                    FadeInLeftBig(
+                                                      child: Container(
+                                                        decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                              width: 2,
+                                                              color: green.withOpacity(0.9)),
+                                                          shape: BoxShape.circle,
+                                                        ),
+                                                        child: CircleAvatar(
+                                                          radius: 20,
+                                                          backgroundColor:
+                                                              Colors.green.withOpacity(0.7),
+                                                          child: Text(
+                                                            state.restaurants[index]
+                                                                .name
+                                                                .substring(0, 1)
+                                                                .toUpperCase(),
+                                                            style:const TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight.bold,
+                                                                fontSize: 27.5,
+                                                                color: white),
+                                                          ),
                                                         ),
                                                       ),
                                                     )

@@ -16,19 +16,22 @@ class AddNewAddressButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) =>  ScreenAddAddress(operation: Operation.add),
-          ),
-        );
-      },
-      child: DottedButtonWidget(
-        width: width,
-        height: height,
-        title: 'Add New Address',
-        icon: Icons.add,
+    return Container(
+      color: Colors.green[100],
+      child: InkWell(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const ScreenAddAddress(operation: Operation.add),
+            ),
+          );
+        },
+        child: DottedButtonWidget(
+          width: width,
+          height: height,
+          title: 'Add New Address',
+          icon: Icons.add,
+        ),
       ),
     );
   }

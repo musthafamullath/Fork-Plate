@@ -47,20 +47,24 @@ class _ScreenRegisterPageState extends State<ScreenRegisterPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                kHight20,
-                const Text("Welcome", style: bigBoldBlack),
+                
+                const Text("Welcome",  
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),),
                 const Text(
                   "Sign Up to your account",
                   style: semiBoldBlack,
                 ),
-                kHight20,
+                
                 Form(
                   key: formKey,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      kHight10,
+                      
                       TextFieldWidget(
                         userController: emailController,
                         label: 'Email-address:',
@@ -75,7 +79,7 @@ class _ScreenRegisterPageState extends State<ScreenRegisterPage> {
                           return null;
                         },
                       ),
-                      kHight10,
+                      
                       TextFieldWidget(
                         userController: firstController,
                         label: 'First name',
@@ -88,7 +92,7 @@ class _ScreenRegisterPageState extends State<ScreenRegisterPage> {
                           return null;
                         },
                       ),
-                      kHight10,
+                      
                       TextFieldWidget(
                         userController: lastController,
                         label: 'Last Name',
@@ -101,7 +105,7 @@ class _ScreenRegisterPageState extends State<ScreenRegisterPage> {
                           return null;
                         },
                       ),
-                      kHight10,
+                      
                       TextFieldWidget(
                           userController: mobileController,
                           label: "Phone number",
@@ -114,7 +118,7 @@ class _ScreenRegisterPageState extends State<ScreenRegisterPage> {
                               return null;
                             }
                           }),
-                      kHight10,
+                      
                       BlocBuilder<TogglepasswordCubit, bool>(
                         builder: (context, state) {
                           return TextFieldWidget(
@@ -138,7 +142,7 @@ class _ScreenRegisterPageState extends State<ScreenRegisterPage> {
                           );
                         },
                       ),
-                      kHight10,
+                      
                       BlocBuilder<ToggleRepasswordCubit, bool>(
                         builder: (context, state) {
                           return TextFieldWidget(
@@ -159,7 +163,7 @@ class _ScreenRegisterPageState extends State<ScreenRegisterPage> {
                           );
                         },
                       ),
-                      kHight20,
+                      kHight10,
                       BlocConsumer<SignupBloc, SignupState>(
                         listener: (context, state) {
                           if (state is SuccessState) {
@@ -207,7 +211,7 @@ class _ScreenRegisterPageState extends State<ScreenRegisterPage> {
                           );
                         },
                       ),
-                      kHight30,
+                      kHight10,
                       const DemoUser(),
                     ],
                   ),

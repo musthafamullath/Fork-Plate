@@ -53,7 +53,7 @@ class _ScreenAddAddressState extends State<ScreenAddAddress> {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(56),
+        preferredSize: const Size.fromHeight(90),
         child: AppBarWidget(
           title: widget.operation == Operation.add
               ? 'Add New Address'

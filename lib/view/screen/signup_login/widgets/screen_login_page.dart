@@ -41,11 +41,11 @@ class _ScreenLoginPageState extends State<ScreenLoginPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                kHight50,
+                
                 const Text(
-                  "Welcome",
+                  "Welcome Back",
                   style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 32,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -53,7 +53,7 @@ class _ScreenLoginPageState extends State<ScreenLoginPage> {
                   "Login to your account",
                   style: TextStyle(fontSize: 18),
                 ),
-                kHight30,
+                kHight10,
                 Form(
                   key: formKey,
                   child: Column(
@@ -72,7 +72,7 @@ class _ScreenLoginPageState extends State<ScreenLoginPage> {
                               : null;
                         },
                       ),
-                      kHight10,
+                      
                       BlocBuilder<TogglepasswordCubit, bool>(
                         builder: (context, state) {
                           return TextFieldWidget(
@@ -98,7 +98,7 @@ class _ScreenLoginPageState extends State<ScreenLoginPage> {
                           );
                         },
                       ),
-                      kHight20,
+                     
                         TextButtonWidget(
                     width: size,
                     text: 'Forgot password?',
@@ -149,12 +149,12 @@ class _ScreenLoginPageState extends State<ScreenLoginPage> {
                           );
                         },
                       ),
-                      kHight50,
+                      kHight10,
                       const DemoUser(),
                     ],
                   ),
                 ),
-                kHight50,
+                kHight10,
               ],
             ),
           ),

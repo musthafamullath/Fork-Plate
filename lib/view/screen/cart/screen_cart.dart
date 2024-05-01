@@ -31,7 +31,7 @@ class ScreenCart extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     context.read<CartBloc>().add(GetAllCartItemsEvent());
     return Scaffold(
-      backgroundColor: Colors.green[100],
+      backgroundColor: white,
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(90),
         child: AppBarWidget(title: 'Cart'),
@@ -57,7 +57,7 @@ class ScreenCart extends StatelessWidget {
                               padding: const EdgeInsets.all(18),
                               width: width,
                               decoration: BoxDecoration(
-                                color: white,
+                                color: Colors.green[100],
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Column(
@@ -300,7 +300,7 @@ class ScreenCart extends StatelessWidget {
                               width: width,
                               padding: const EdgeInsets.all(24),
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Colors.green[100],
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Column(
@@ -386,7 +386,7 @@ class ScreenCart extends StatelessWidget {
                               padding: const EdgeInsets.all(18),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: Colors.white,
+                                color: Colors.green[100],
                               ),
                               child: Column(
                                 children: [
