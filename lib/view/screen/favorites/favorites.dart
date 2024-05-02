@@ -57,7 +57,7 @@ class ScreenFavorites extends StatelessWidget {
                           decoration: BoxDecoration(
                             // color: Colors.amber,
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(width: .5, color: darkOliveGreen),
+                            border: Border.all(width: .5, color: yellowGreen),
                           ),
                           child: Column(
                             children: [
@@ -66,7 +66,7 @@ class ScreenFavorites extends StatelessWidget {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     border: Border.all(
-                                        width: .5, color: darkOliveGreen),
+                                        width: .5, color: yellowGreen),
                                     image: DecorationImage(
                                         image: NetworkImage(
                                             state.dishes[index].imageUrl),

@@ -25,7 +25,7 @@ class FavoritesButton extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: dishIds.contains(dish.dishId)
             ?
-            darkOliveGreen
+            yellowGreen
             :
             white,
             radius: 30,
@@ -46,7 +46,7 @@ class FavoritesButton extends StatelessWidget {
                 ?
                 white
                 :
-                darkOliveGreen,
+                yellowGreen,
               ),
             ),
           ),

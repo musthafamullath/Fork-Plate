@@ -137,7 +137,7 @@ class ScreenCart extends StatelessWidget {
                                                         children: [
                                                           Container(
                                                             decoration: BoxDecoration(
-                                                                color: darkOliveGreen
+                                                                color: yellowGreen
                                                                     .withOpacity(
                                                                         0.1),
                                                                 borderRadius: const BorderRadius

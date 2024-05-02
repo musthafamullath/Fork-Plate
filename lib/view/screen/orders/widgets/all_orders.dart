@@ -19,7 +19,7 @@ class AllOrders extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.only(left: 15,right: 15),
       child: ListView.builder(
         itemCount: order.length,
         itemBuilder: (context, index) {
@@ -52,9 +52,9 @@ class AllOrders extends StatelessWidget {
               padding: const EdgeInsets.all(12),
               margin: const EdgeInsets.all(4),
               decoration: BoxDecoration(
-                color: Colors.green[100],
+                color: Colors.grey[200],
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.grey.withOpacity(0.1),width: 5),
+                border: Border.all(color: Colors.grey.shade300,width: 1),
               ),
               child: Column(
                 children: [
@@ -67,10 +67,10 @@ class AllOrders extends StatelessWidget {
                         height: height * .08,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey.withOpacity(0.5),width: 3),
+                          border: Border.all(color: Colors.grey.shade300,width: 1),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Image.asset('assets/icons/check-mark.png'),
+                        child: Image.asset('assets/icons/check-mark.png',color: yellowGreen,),
                       ),
                       kWidth10,
                       Column(
@@ -79,27 +79,30 @@ class AllOrders extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text('Order Id:  '),
+                              const Text('\t\t\t\t\t\t\t\t\tOrder Id:\t\t\t\t\t\t\t\t'),
                               Text(
                                 order[index].orderId.toString(),
                                 overflow: TextOverflow.ellipsis,
-                                style: boldGreen,
+                                style: semiBoldGreen,
                               ),
                               Text(
-                                '   ${order[index].itemCount} items',
-                                style: boldBlack,
+                                '\t\t\t\t\t\t\t\t${order[index].itemCount} items',
+                                style: semiBoldGrey,
                               )
                             ],
                           ),
                           const SizedBox(height: 5),
                           Row(
                             children: [
-                              const Text('Order on: '),
-                              Text(
-                                DateFormat(" d MMM yyyy").format(
-                                  DateTime.parse(order[index].orderDate),
+                              const Text('\t\t\t\t\t\t\t\t\tOrder on: '),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 35),
+                                child: Text(
+                                  DateFormat(" d MMM yyyy").format(
+                                    DateTime.parse(order[index].orderDate),
+                                  ),
+                                  style: semiBoldGrey,
                                 ),
-                                style: semiBoldBlack,
                               ),
                             ],
                           )
@@ -112,7 +115,7 @@ class AllOrders extends StatelessWidget {
                       keyString: 'Price',
                       value:
                           '₹ ${order[index].totalPrice - order[index].deliveryCharge}'),
-                  divider1,
+                  Divider(thickness: 1,color: grey.withOpacity(0.5),),
                   ItemRow(
                       keyString: 'Order status',
                       value: order[index].orderStatus)

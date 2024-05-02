@@ -18,7 +18,7 @@ class RestaurantBanner extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 32,
-          backgroundColor: darkOliveGreen,
+          backgroundColor: yellowGreen,
           child: CircleAvatar(
             radius: 30,
             backgroundColor: white,

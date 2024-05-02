@@ -15,7 +15,7 @@ class ScreenOrders extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(110),
+          preferredSize: Size.fromHeight(120),
           child: TabBarWidgetCustom(text: "Orders")
         ),
         body: TabBarView(children: [

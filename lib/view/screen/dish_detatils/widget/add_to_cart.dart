@@ -49,7 +49,7 @@ class AddToCartButton extends StatelessWidget {
                 style: bigBoldWhite,
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: darkOliveGreen,
+                backgroundColor: yellowGreen,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25)),
               ),

@@ -14,7 +14,7 @@ class ItemRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
+      height: 32,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [SectionHead(heading: keyString), VerticalDivider(width: width,color:color,thickness: thickness,), SectionValue(heading: value)],

@@ -33,8 +33,8 @@ class _ScreenLoginPageState extends State<ScreenLoginPage> {
         child: Card(
           elevation: 2,
           margin: const EdgeInsets.all(20),
-          shadowColor: darkOliveGreen,
-          surfaceTintColor: darkOliveGreen,
+          shadowColor: yellowGreen,
+          surfaceTintColor: yellowGreen,
           child: Container(
             margin: const EdgeInsets.all(20),
             child: Column(

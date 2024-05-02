@@ -22,7 +22,7 @@ class DishContainer extends StatelessWidget {
       // height: height * .275,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(width: 1, color: darkOliveGreen),
+        border: Border.all(width: 1, color: yellowGreen),
       ),
       child: Column(
         children: [
@@ -32,7 +32,7 @@ class DishContainer extends StatelessWidget {
                 height: height * .15,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(width: 1, color: darkOliveGreen),
+                  border: Border.all(width: 1, color: yellowGreen),
                   image: DecorationImage(
                     image: dish.imageUrl == ''
                         ? const AssetImage('assets/images/categories/dish.jpg')

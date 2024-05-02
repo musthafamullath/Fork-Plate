@@ -9,7 +9,7 @@ class SectionValue extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       heading,
-      style: bigBoldGreen,
+      style: semiBoldGreen,
        textDirection: TextDirection.ltr,
       textAlign: TextAlign.center,
       overflow: TextOverflow.fade,

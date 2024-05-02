@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_fly/utils/text_styles.dart';
 
 class SectionHead extends StatelessWidget {
   const SectionHead({super.key, required this.heading});
@@ -9,7 +10,7 @@ class SectionHead extends StatelessWidget {
     return Text(
       
       heading,
-      style: const TextStyle(color: Colors.black87,fontWeight: FontWeight.bold,fontSize: 25),
+      style:semiBoldBlack,
       textDirection: TextDirection.ltr,
       textAlign: TextAlign.center,
       overflow: TextOverflow.clip,

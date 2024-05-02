@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/utils/text_styles.dart';
 import 'package:foodie_fly/view/screen/orders/widgets/tabbar_text_widget.dart';
 
@@ -12,29 +13,38 @@ class TabBarWidgetCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          color: Colors.green,
-          border: BorderDirectional(
+      
+      decoration:  BoxDecoration(
+        boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              blurRadius: 7,
+              spreadRadius: 5,
+              offset: const Offset(0.5, 0.5),
+            )
+        ],
+          color: yellowGreen,
+          border:const BorderDirectional(
             bottom: BorderSide(
-              color: Colors.green.shade800,
-              width: 10,
+              color: yellowGreen,
+              width: 20,
             ),
           ),
           borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(12),
-              bottomRight: Radius.circular(12))),
+              bottomLeft: Radius.circular(30),
+              bottomRight: Radius.circular(30))),
       child: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: yellowGreen,
         title: const Padding(
           padding:  EdgeInsets.only(top: 10),
           child:  Text('Orders', style: bigBoldWhite),
         ),
         centerTitle: true,
         bottom: const TabBar(
-          labelColor: Colors.white,
-          unselectedLabelColor: Colors.white,
+          labelColor: white,
+          unselectedLabelColor: black,
           indicatorWeight: 5,
-          indicatorColor: Colors.white,
+          indicatorColor: white,
           indicatorSize: TabBarIndicatorSize.label,
           tabs: [
             Padding(
