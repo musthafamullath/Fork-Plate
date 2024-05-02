@@ -29,21 +29,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => SignupBloc(),),
-        BlocProvider(create: (context) => LoginBloc(),),
-        BlocProvider(create: (context) => BottomNavigationBloc(),),
-        BlocProvider(create: (context) => TogglepasswordCubit(),),
-        BlocProvider(create: (context) => ToggleRepasswordCubit(),),
-        BlocProvider(create: (context) => ProfileBloc(),),
-        BlocProvider(create: (context) => CategoryBloc(),),
-        BlocProvider(create: (context) => DishBloc(),),
-        BlocProvider(create: (context) => OfferBloc(),),
-        BlocProvider(create: (context) => RestaurantBloc(),),
-        BlocProvider(create: (context) => CartBloc(),),
-        BlocProvider(create: (context) => FavoritesBloc(),),
-        BlocProvider(create: (context) => PaymentBloc(),),
-        BlocProvider(create: (context) => AddressBloc(),),
-        BlocProvider(create: (context) => OrderBloc(),)
+        BlocProvider(create: (context) => SignupBloc()),
+        BlocProvider(create: (context) => LoginBloc()),
+        BlocProvider(create: (context) => BottomNavigationBloc()),
+        BlocProvider(create: (context) => TogglepasswordCubit()),
+        BlocProvider(create: (context) => ToggleRepasswordCubit()),
+        BlocProvider(create: (context) => ProfileBloc()),
+        BlocProvider(create: (context) => CategoryBloc()),
+        BlocProvider(create: (context) => DishBloc()),
+        BlocProvider(create: (context) => OfferBloc()),
+        BlocProvider(create: (context) => RestaurantBloc()),
+        BlocProvider(create: (context) => CartBloc()),
+        BlocProvider(create: (context) => FavoritesBloc()),
+        BlocProvider(create: (context) => PaymentBloc()),
+        BlocProvider(create: (context) => AddressBloc()),
+        BlocProvider(create: (context) => OrderBloc())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

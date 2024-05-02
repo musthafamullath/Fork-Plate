@@ -15,7 +15,7 @@ class FavoritesButton extends StatelessWidget {
       listener: (context, state) {
         
        if(state is AddTofavorite){
-        showSnack(context, green, "Added To Favarite");
+        showSnack(context, kGreen, "Added To Favarite");
        }else{}
       },
       builder: (context, state) {
@@ -25,7 +25,7 @@ class FavoritesButton extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: dishIds.contains(dish.dishId)
             ?
-            green
+            darkOliveGreen
             :
             white,
             radius: 30,
@@ -46,7 +46,7 @@ class FavoritesButton extends StatelessWidget {
                 ?
                 white
                 :
-                green,
+                darkOliveGreen,
               ),
             ),
           ),

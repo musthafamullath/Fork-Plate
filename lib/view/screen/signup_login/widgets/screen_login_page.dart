@@ -33,8 +33,8 @@ class _ScreenLoginPageState extends State<ScreenLoginPage> {
         child: Card(
           elevation: 2,
           margin: const EdgeInsets.all(20),
-          shadowColor: greenPointWithblue,
-          surfaceTintColor: greenPointWithblue,
+          shadowColor: darkOliveGreen,
+          surfaceTintColor: darkOliveGreen,
           child: Container(
             margin: const EdgeInsets.all(20),
             child: Column(
@@ -117,7 +117,7 @@ class _ScreenLoginPageState extends State<ScreenLoginPage> {
                                 .pushReplacement(MaterialPageRoute(
                               builder: (context) => ScreenMainPage(),
                             ));
-                            showSnack(context, green,
+                            showSnack(context, kGreen,
                                 "successfully signed up");
                           } else if (state is SellerLoginFailedInvalidFields) {
                             showSnack(context, amber,

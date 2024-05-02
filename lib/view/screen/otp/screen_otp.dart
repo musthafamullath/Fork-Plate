@@ -121,7 +121,7 @@ class _ScreenOTPState extends State<ScreenOTP> {
                       
                       if (value) {
                        
-                        showSnack(context, green, 'Account created successfully');
+                        showSnack(context, kGreen, 'Account created successfully');
                          
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                           builder: (context) => ScreenMainPage(),

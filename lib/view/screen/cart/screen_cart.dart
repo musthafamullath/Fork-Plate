@@ -66,11 +66,11 @@ class ScreenCart extends StatelessWidget {
                                     listener: (context, state) {
                                       if (state is AddToCartState) {
                                         showSnack(
-                                            context, green, "Added To Cart");
+                                            context, kGreen, "Added To Cart");
                                       } else if (state
                                           is GetAllCartItemsFaildState) {
                                         showSnack(
-                                            context, green, "Added To Faild");
+                                            context, kGreen, "Added To Faild");
                                       } else {}
                                     },
                                     builder: (context, state) {
@@ -137,7 +137,7 @@ class ScreenCart extends StatelessWidget {
                                                         children: [
                                                           Container(
                                                             decoration: BoxDecoration(
-                                                                color: green
+                                                                color: darkOliveGreen
                                                                     .withOpacity(
                                                                         0.1),
                                                                 borderRadius: const BorderRadius

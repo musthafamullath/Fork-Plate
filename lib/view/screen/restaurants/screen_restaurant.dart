@@ -79,7 +79,7 @@ class ScreenRestaurants extends StatelessWidget {
                                             blurRadius: 5,
                                             spreadRadius: 1,
                                             blurStyle: BlurStyle.outer,
-                                            color: green,
+                                            color: darkOliveGreen,
                                           )
                                         ]),
                                     child: Padding(
@@ -130,7 +130,7 @@ class ScreenRestaurants extends StatelessWidget {
                                                         decoration: BoxDecoration(
                                                           border: Border.all(
                                                               width: 2,
-                                                              color: green.withOpacity(0.9)),
+                                                              color: darkOliveGreen.withOpacity(0.9)),
                                                           shape: BoxShape.circle,
                                                         ),
                                                         child: CircleAvatar(

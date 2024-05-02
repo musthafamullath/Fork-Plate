@@ -11,14 +11,18 @@ class SplashComponeses extends StatelessWidget {
     return const Center(
       child: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text.rich(
-              TextSpan(
-                children: [
+            kHight100,
+            kHight100,
+            kHight100,
+            kHight100,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text.rich(TextSpan(children: [
                   TextSpan(
-                    text: 'FOODIE ',
+                    text: 'Sorry,',
                     style: TextStyle(
                       fontSize: 50,
                       color: black,
@@ -26,14 +30,32 @@ class SplashComponeses extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: 'FLY',
-                    style: TextStyle(
-                      fontSize: 50,
-                      color: white,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    children: [
+                      TextSpan(
+                        text: 'I’m',
+                        style: TextStyle(
+                          fontSize: 25,
+                          color: black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ]))
+              ],
+            ),
+            Text.rich(
+              TextSpan(
+                text: 'P(late)',
+                style: TextStyle(
+                  backgroundColor: black,
+                  decoration: TextDecoration.underline,
+                  decorationColor: darkOliveGreen,
+                  decorationStyle: TextDecorationStyle.wavy,
+                  fontSize: 50,
+                  color: darkOliveGreen,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],

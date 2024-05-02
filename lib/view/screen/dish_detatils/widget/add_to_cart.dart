@@ -30,7 +30,7 @@ class AddToCartButton extends StatelessWidget {
           child: BlocListener<CartBloc, CartState>(
             listener: (context, state) {
               if(state is AddToCartState){
-                showSnack(context, green, "Added To Cart");
+                showSnack(context, kGreen, "Added To Cart");
               }
             },
             child: ElevatedButton.icon(
@@ -49,7 +49,7 @@ class AddToCartButton extends StatelessWidget {
                 style: bigBoldWhite,
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: green,
+                backgroundColor: darkOliveGreen,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25)),
               ),

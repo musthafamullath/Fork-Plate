@@ -138,7 +138,7 @@ class ScreenCheckout extends StatelessWidget {
             BlocConsumer<PaymentBloc, PaymentState>(
               listener: (context, state) {
                 if (state is CheckOutSuccessState) {
-                  showSnack(context, green, 'Order Placed Successfully');
+                  showSnack(context, kGreen, 'Order Placed Successfully');
                 }
               },
               builder: (context, state) {

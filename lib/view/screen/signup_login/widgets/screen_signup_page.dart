@@ -171,7 +171,7 @@ class _ScreenRegisterPageState extends State<ScreenRegisterPage> {
                                 .pushReplacement(MaterialPageRoute(
                               builder: (context) => const ScreenOTP(),
                             ));
-                            showSnack(context, green, "verify otp to see home");
+                            showSnack(context, kGreen, "verify otp to see home");
                           } else if (state is FailedInvalidfields) {
                             showSnack(context, amber, "failed. invalid fields");
                           } else if (state is FailedToSignupUser) {

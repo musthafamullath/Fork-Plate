@@ -9,7 +9,7 @@ class AppBarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: green,
+          color: darkOliveGreen,
           border: BorderDirectional(
             bottom: BorderSide(
               color: greenPointShade800,

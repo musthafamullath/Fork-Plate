@@ -39,12 +39,12 @@ class ScreenProfile extends StatelessWidget {
                           margin: const EdgeInsets.only(bottom: 10),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              color: green,
+                              color: darkOliveGreen,
                               border: Border.all()),
                           width: size * 7 / 10,
                           child: Card(
-                            shadowColor: green,
-                            surfaceTintColor: green,
+                            shadowColor: darkOliveGreen,
+                            surfaceTintColor: darkOliveGreen,
                             borderOnForeground: false,
                             child: Padding(
                               padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -121,7 +121,7 @@ class ScreenProfile extends StatelessWidget {
                                 padding: const EdgeInsets.all(7),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    color: green),
+                                    color: darkOliveGreen),
                                 child: const Text(
                                   "Edit",
                                   style: boldWhite,

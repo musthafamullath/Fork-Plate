@@ -20,7 +20,7 @@ class Header extends StatelessWidget {
       builder: (context, state) {
         return Container(
           decoration: BoxDecoration(
-              color: green,
+              color: darkOliveGreen,
               border: BorderDirectional(
                 bottom: BorderSide(
                   color: greenPointShade800,

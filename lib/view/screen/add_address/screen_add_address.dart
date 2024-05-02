@@ -180,11 +180,11 @@ class _ScreenAddAddressState extends State<ScreenAddAddress> {
                         context.read<AddressBloc>().add(AddAddressEvent(
                             address: addresss, context: context));
                             Navigator.of(context).pop();
-                            showSnack(context, green, "New Address added");
+                            showSnack(context, kGreen, "New Address added");
                       } else {
                         context.read<AddressBloc>().add(UpdateAddressEvent(
                             address: addresss, context: context));
-                            showSnack(context, green, "New Address not added");
+                            showSnack(context, kGreen, "New Address not added");
                             Navigator.of(context).pop();
                       }
                     }
