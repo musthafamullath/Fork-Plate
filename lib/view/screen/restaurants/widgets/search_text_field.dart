@@ -17,18 +17,19 @@ class SearchTextFieldForFood extends StatelessWidget {
     return CupertinoSearchTextField(
       padding: const EdgeInsets.all(15),
       placeholder: text,
-      backgroundColor: Colors.green[100],
-      prefixIcon: Padding(
-        padding: const EdgeInsets.only(left: 10),
+      placeholderStyle: const TextStyle(color: white),
+      backgroundColor: Colors.grey.shade300,
+      prefixIcon: const Padding(
+        padding:  EdgeInsets.only(left: 10),
         child: Icon(
           CupertinoIcons.search,
-          color: greenPointShade800,
+          color: kGreen,
           size: 32,
         ),
       ),
       suffixIcon:
-          Icon(CupertinoIcons.xmark_circle_fill, color: greenPointShade800),
-      style: TextStyle(color: greenPointShade800, fontSize: 20),
+         const Icon(CupertinoIcons.xmark_circle_fill, ),
+      style: const TextStyle(color: white, fontSize: 20),
       onChanged: (value) async {
         context.read<DishBloc>().add(
               SearchDishEvent(

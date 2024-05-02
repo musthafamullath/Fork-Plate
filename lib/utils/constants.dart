@@ -13,6 +13,7 @@ const kWidth50 = SizedBox(width: 50);
 const divider1 = Divider(thickness: 1, color: Colors.black);
 const divider1g = Divider(thickness: 1, color: Colors.grey);
 const divider2 = Divider(thickness: 2, color: Colors.grey);
+final divider3 = Divider(thickness: 2,color: Colors.grey.shade300,);
 const divider5 = Divider(thickness: 5, color: Colors.black);
 
 final Color greenPointWithblue = Colors.green.withBlue(300);

@@ -8,15 +8,23 @@ class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
+         boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              blurRadius: 7,
+              spreadRadius: 5,
+              offset: const Offset(0.5, 0.5),
+            )
+          ],
           color: yellowGreen,
-          border: BorderDirectional(
+          border:const BorderDirectional(
             bottom: BorderSide(
               color: yellowGreen,
               width: 10,
             ),
           ),
-          borderRadius:  BorderRadius.only(
+          borderRadius: const  BorderRadius.only(
               bottomLeft: Radius.circular(35),
               bottomRight: Radius.circular(35))),
       child: Center(

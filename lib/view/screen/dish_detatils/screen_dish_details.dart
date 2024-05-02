@@ -23,53 +23,60 @@ class ScreenDishDetails extends StatelessWidget {
         preferredSize: const Size.fromHeight(90),
         child: AppBarWidget(title: dish.name),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(7.5),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 15, left: 7.5, right: 7.5),
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.green[100],
-              borderRadius: BorderRadius.circular(30)
-            ),
-            
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ImageContainer(width: width, height: height, dish: dish),
-                      kHight20,
-                      Row(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(30)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ImageContainer(width: width, height: height, dish: dish),
+                    kHight10,
+                    Padding(
+                       padding: const EdgeInsets.symmetric(horizontal: 7.5),
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SectionHead(heading: dish.name),
                           Text(
                             '₹ ${dish.price}',
-                            style: bigBoldGreen,
+                            style: semiBoldGreen,
                           )
                         ],
                       ),
-                      kHight20,
-                      RestaurantBanner(seller: seller),
-                      kHight20,
-                      Text(
+                    ),
+                    kHight10,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 7.5),
+                      child: RestaurantBanner(seller: seller),
+                    ),
+                    kHight10,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 7.5),
+                      child: Text(
                         dish.description,
-                        style: bigBoldGrey,
+                        style: semiBoldGrey,
                       ),
-                    ],
-                  ),
-                  kHight30,
-                  AddToCartButton(
+                    ),
+                  ],
+                ),
+                kHight20,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 7.5),
+                  child: AddToCartButton(
                     width: width,
                     height: height,
                     dish: dish,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

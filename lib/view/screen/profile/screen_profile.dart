@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,89 +21,70 @@ class ScreenProfile extends StatelessWidget {
     context.read<ProfileBloc>().add(GetProfileEvent());
     return Scaffold(
         appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(90),
+          preferredSize: Size.fromHeight(80),
           child: AppBarWidget(title: 'Profile'),
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left:15,right: 15,top: 15),
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 15),
             child: BlocBuilder<ProfileBloc, ProfileState>(
               builder: (context, state) {
                 return Column(
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           margin: const EdgeInsets.only(bottom: 10),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              color: yellowGreen,
-                              border: Border.all()),
+                              color: Colors.grey.shade200,
+                              border: Border.all(
+                                  color: Colors.grey.shade300, width: 2)),
                           width: size * 7 / 10,
-                          child: Card(
-                            shadowColor: yellowGreen,
-                            surfaceTintColor: yellowGreen,
-                            borderOnForeground: false,
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  kHight20,
-                                  ProfileSpanText(
-                                    indicateText: 'Seller Fast Name:  ',
-                                    valueText: state.profile?.firstName ??
-                                        'First Name',
-                                  ),
-                                  kHight10,
-                                  const Divider(),
-                                  kHight10,
-                                  ProfileSpanText(
-                                    indicateText: "Seller Last Name:  ",
-                                    valueText:
-                                        state.profile?.lastName ?? "Lastname",
-                                  ),
-                                  kHight10,
-                                  const Divider(),
-                                  kHight10,
-                                  ProfileSpanText(
-                                    indicateText: "Email:  ",
-                                    valueText:
-                                        state.profile?.email ?? "Email",
-                                  ),
-                                  kHight10,
-                                  const Divider(),
-                                  kHight10,
-                                  ProfileSpanText(
-                                    indicateText: "Phone Number:  ",
-                                    valueText: state.profile?.phone ??
-                                        "Phone Number",
-                                  ),
-                                  kHight10,
-                                  const Divider(),
-                                  kHight10,
-                                  ProfileSpanText(
-                                    indicateText: "Status:  ",
-                                    valueText:
-                                        (state.profile?.status ?? "Status")
-                                            .toString(),
-                                  ),
-                                  kHight10,
-                                  const Divider(),
-                                  kHight10,
-                                  ProfileSpanText(
-                                    indicateText: "User Id:  ",
-                                    valueText:
-                                        state.profile?.userId.toString() ??
-                                            "User Id",
-                                  ),
-                                  kHight10,
-                                  const Divider(),
-                                  kHight10,
-                                ],
-                              ),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                kHight10,
+                                ProfileSpanText(
+                                  indicateText: 'Seller Fast Name:  ',
+                                  valueText:
+                                      state.profile?.firstName ?? 'First Name',
+                                ),
+                                kHight10,
+                                ProfileSpanText(
+                                  indicateText: "Seller Last Name:  ",
+                                  valueText:
+                                      state.profile?.lastName ?? "Lastname",
+                                ),
+                                kHight10,
+                                ProfileSpanText(
+                                  indicateText: "Email:  ",
+                                  valueText: state.profile?.email ?? "Email",
+                                ),
+                                kHight10,
+                                ProfileSpanText(
+                                  indicateText: "Phone Number:  ",
+                                  valueText:
+                                      state.profile?.phone ?? "Phone Number",
+                                ),
+                                kHight10,
+                                ProfileSpanText(
+                                  indicateText: "Status:  ",
+                                  valueText: (state.profile?.status ?? "Status")
+                                      .toString(),
+                                ),
+                                kHight10,
+                                ProfileSpanText(
+                                  indicateText: "User Id:  ",
+                                  valueText: state.profile?.userId.toString() ??
+                                      "User Id",
+                                ),
+                                kHight10,
+                              ],
                             ),
                           ),
                         ),
@@ -118,9 +98,12 @@ class ScreenProfile extends StatelessWidget {
                               );
                             },
                             child: Container(
-                                padding: const EdgeInsets.all(7),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
+                                padding: const EdgeInsets.all(14),
+                                decoration: const BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(25),
+                                      bottomRight: Radius.circular(25),
+                                    ),
                                     color: yellowGreen),
                                 child: const Text(
                                   "Edit",
@@ -128,7 +111,7 @@ class ScreenProfile extends StatelessWidget {
                                 ))),
                       ],
                     ),
-                    divider2,
+                    divider3,
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -145,13 +128,17 @@ class ScreenProfile extends StatelessWidget {
                                   ),
                                 );
                               },
-                              icon: const Icon(CupertinoIcons.right_chevron),
+                              icon: CircleAvatar(
+                                backgroundColor: yellowGreen.withOpacity(0.25),
+                                child: const Icon(CupertinoIcons.right_chevron)),
                             )
                           ],
                         ),
-                        const SubText(text: 'Edit & Add new addresses',),
+                        const SubText(
+                          text: 'Edit & Add new addresses',
+                        ),
                         kHight10,
-                        divider2,
+                        divider3,
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -160,7 +147,9 @@ class ScreenProfile extends StatelessWidget {
                               onPressed: () async {
                                 showDialogBox(context);
                               },
-                              icon: const Icon(CupertinoIcons.right_chevron),
+                             icon: CircleAvatar(
+                                backgroundColor: yellowGreen.withOpacity(0.25),
+                                child: const Icon(CupertinoIcons.right_chevron,)),
                             ),
                           ],
                         ),

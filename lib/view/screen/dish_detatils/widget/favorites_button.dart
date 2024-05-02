@@ -21,14 +21,14 @@ class FavoritesButton extends StatelessWidget {
       builder: (context, state) {
         final dishIds = state.dishes.map((dish) => dish.dishId).toList();
         return CircleAvatar(
-          radius: 32,
+          radius: 26,
           child: CircleAvatar(
             backgroundColor: dishIds.contains(dish.dishId)
             ?
             yellowGreen
             :
             white,
-            radius: 30,
+            radius: 24,
             child: IconButton(
               style: ElevatedButton.styleFrom(
                   shape:const RoundedRectangleBorder(
@@ -41,7 +41,7 @@ class FavoritesButton extends StatelessWidget {
               },
               icon: Icon(
                 Icons.favorite,
-                size: 40,
+                size: 30,
                 color: dishIds.contains(dish.dishId)
                 ?
                 white

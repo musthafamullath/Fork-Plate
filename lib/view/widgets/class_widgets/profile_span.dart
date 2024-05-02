@@ -14,8 +14,8 @@ class ProfileSpanText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text.rich(
       TextSpan(children: [
-        TextSpan(text: indicateText, style: semiBoldGreen),
-        TextSpan(text: valueText, style: semiBoldBlack)
+        TextSpan(text: indicateText, style: semiBoldBlack),
+        TextSpan(text: valueText, style: semiBoldGreen)
       ]),
     );
   }

@@ -10,21 +10,24 @@ class SearchTextField extends StatelessWidget {
   final String text;
   @override
   Widget build(BuildContext context) {
-    return CupertinoSearchTextField(
-      padding: const EdgeInsets.all(15),
-      placeholder: text,
-      placeholderStyle: const TextStyle(color: white),
-      backgroundColor: Colors.green[100],
-      prefixIcon: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: Icon(CupertinoIcons.search, color: greenPointShade800,size: 32,),
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: CupertinoSearchTextField(
+        padding: const EdgeInsets.all(15),
+        placeholder: text,
+        placeholderStyle: const TextStyle(color: white),
+        backgroundColor: Colors.grey.shade300,
+        prefixIcon: Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Icon(CupertinoIcons.search, color: greenPointShade800,size: 32,),
+        ),
+        suffixIcon:
+            Icon(CupertinoIcons.xmark_circle_fill, color: greenPointShade800),
+        style: TextStyle(color: greenPointShade800,fontSize: 20),
+        onChanged: (value) async {
+          context.read<RestaurantBloc>().add(SearchRestaurantEvent(query: value));
+        },
       ),
-      suffixIcon:
-          Icon(CupertinoIcons.xmark_circle_fill, color: greenPointShade800),
-      style: TextStyle(color: greenPointShade800,fontSize: 20),
-      onChanged: (value) async {
-        context.read<RestaurantBloc>().add(SearchRestaurantEvent(query: value));
-      },
     );
   }
 }

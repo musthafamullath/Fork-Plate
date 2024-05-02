@@ -19,12 +19,12 @@ class ScreenRestaurants extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(90),
+        preferredSize: Size.fromHeight(80),
         child: AppBarWidget(title: "Restaurants"),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.only(left: 15,right: 15,),
           child: BlocBuilder<RestaurantBloc, RestaurantState>(
             builder: (context, state) {
               return Column(

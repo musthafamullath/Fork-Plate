@@ -22,11 +22,11 @@ class AddToCartButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         SizedBox(
-          width: width - 125,
-          height: height * .075,
+          width: width - 250,
+          height: height * 00000.5/10,
           child: BlocListener<CartBloc, CartState>(
             listener: (context, state) {
               if(state is AddToCartState){
@@ -41,17 +41,17 @@ class AddToCartButton extends StatelessWidget {
               },
               icon: const Icon(
                 Icons.shopping_bag_outlined,
-                size: 40,
+                size: 32,
                 color: white,
               ),
               label: const Text(
                 'Add to bag',
-                style: bigBoldWhite,
+                style: semiBoldWhite,
               ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: yellowGreen,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25)),
+                    borderRadius: BorderRadius.circular(15)),
               ),
             ),
           ),
