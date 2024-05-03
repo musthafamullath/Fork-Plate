@@ -22,7 +22,7 @@ class SplashComponeses extends StatelessWidget {
               children: [
                 Text.rich(TextSpan(children: [
                   TextSpan(
-                    text: 'Sorry, ',
+                    text: 'FOODIE',
                     style: TextStyle(
                       fontSize: 50,
                       color: white,
@@ -32,7 +32,7 @@ class SplashComponeses extends StatelessWidget {
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: ' I’m',
+                        text: 'FLY',
                         style: TextStyle(
                           backgroundColor: black,
                           decoration: TextDecoration.underline,
@@ -50,7 +50,7 @@ class SplashComponeses extends StatelessWidget {
             ),
             Text.rich(
               TextSpan(
-                text: ' P(late)',
+                text: 'PEOPLE',
                 style: TextStyle(
                   fontSize: 30,
                   color: white,

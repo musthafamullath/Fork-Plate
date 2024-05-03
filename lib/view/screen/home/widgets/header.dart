@@ -20,10 +20,18 @@ class Header extends StatelessWidget {
       builder: (context, state) {
         return Container(
           decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  blurRadius: 7,
+                  spreadRadius: 5,
+                  offset: const Offset(0.5, 0.5),
+                )
+              ],
               color: yellowGreen,
-              border: BorderDirectional(
+              border: const BorderDirectional(
                 bottom: BorderSide(
-                  color: greenPointShade800,
+                  color: yellowGreen,
                   width: 10,
                 ),
               ),
@@ -31,31 +39,29 @@ class Header extends StatelessWidget {
                   bottomLeft: Radius.circular(35),
                   bottomRight: Radius.circular(35))),
           child: Padding(
-            padding: const EdgeInsets.only(
-                top: 60, bottom: 20, left: 20, right: 20),
+            padding:
+                const EdgeInsets.only(top: 60, bottom: 20, left: 20, right: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 RichText(
-                  text: TextSpan(
-                      // style: DefaultTextStyle.of(cxt).style,
-                      children: <TextSpan>[
-                        const TextSpan(
-                            text: 'Hello Welcome\n',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: white,
-                            )),
-                        TextSpan(
-                          text: state.profile?.firstName ?? "Name",
-                          style: const TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: white),
-                        ),
-                      ]),
+                  text: TextSpan(children: <TextSpan>[
+                    const TextSpan(
+                        text: 'Hello Welcome\n',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: white,
+                        )),
+                    TextSpan(
+                      text: state.profile?.firstName ?? "Name",
+                      style: const TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: white),
+                    ),
+                  ]),
                 ),
                 Container(
                   alignment: Alignment.center,

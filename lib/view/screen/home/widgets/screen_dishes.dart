@@ -28,10 +28,10 @@ class ScreenDishes extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 0.9,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 25),
+        padding:const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
-          color: Colors.green[100],
-          borderRadius: BorderRadius.circular(20),
+          color: Colors.grey.shade300,
+          borderRadius: BorderRadius.circular(10),
         ),
         child: GridView.builder(
           shrinkWrap: true,
@@ -40,20 +40,19 @@ class ScreenDishes extends StatelessWidget {
           itemBuilder: (context, index) {
             log(reversedOfferList.length.toString());
             return Container(
-              margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 7.5,horizontal: 7.5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: white,
-                border: Border.all(width: 3, color: grey.withOpacity(0.5)),
+                border: Border.all(width: 1, color: Colors.grey.shade300),
               ),
               child: Column(
                 children: <Widget>[
                   Container(
                     height: height * .13,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      border:
-                          Border.all(width: 1, color: grey.withOpacity(0.5)),
+                      borderRadius: BorderRadius.circular(10),
+                    
                       image: DecorationImage(
                         image: NetworkImage(reversedOfferList[index].image),
                         fit: BoxFit.fill,

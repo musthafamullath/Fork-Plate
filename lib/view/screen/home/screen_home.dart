@@ -34,15 +34,16 @@ class ScreenHome extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                  color: white, borderRadius: BorderRadius.circular(30)),
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(30),
+              ),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    kHight20,
                     const SearchTextField(text: 'Search restaurants...'),
-                    kHight20,
+                    kHight10,
                     ViewAllwidget(
                       text: "Categories",
                       buttonName: "View All",
@@ -52,23 +53,26 @@ class ScreenHome extends StatelessWidget {
                         ));
                       },
                     ),
-                    kHight10,
                     CategoriesGridview(height: height, width: width),
-                    kHight20,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const SectionHead(heading: 'Offers'),
+                        const Text(
+                          "Offers",
+                          style: semiBoldBlack,
+                        ),
                         TextButton(
                             onPressed: () {},
                             child: Container(
-                              padding: const EdgeInsets.all(5),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Colors.green[100]),
-                              child: const Text(
-                                'View All',
-                                style: semiBoldWhite,
+                                  color: Colors.grey.shade300),
+                              child: const Padding(
+                                padding: EdgeInsets.all(4.0),
+                                child: Text(
+                                  'View All',
+                                  style: regularWhite,
+                                ),
                               ),
                             ))
                       ],
@@ -86,7 +90,7 @@ class ScreenHome extends StatelessWidget {
                               );
                       },
                     ),
-                    kHight20,
+                    
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -94,18 +98,21 @@ class ScreenHome extends StatelessWidget {
                         TextButton(
                             onPressed: () {},
                             child: Container(
-                              padding: const EdgeInsets.all(5),
+                             
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Colors.green[100]),
-                              child: const Text(
-                                'View All',
-                                style: semiBoldWhite,
+                                  color: Colors.grey.shade300),
+                              child:const Padding(
+                                padding:  EdgeInsets.all(4.0),
+                                child:  Text(
+                                  'View All',
+                                  style: regularWhite,
+                                ),
                               ),
                             ))
                       ],
                     ),
-                    kHight20,
+                    
                     BlocBuilder<OfferBloc, OfferState>(
                       builder: (context, state) {
                         return state.offers.isEmpty
@@ -119,7 +126,7 @@ class ScreenHome extends StatelessWidget {
                               );
                       },
                     ),
-                    kHight30,
+                    kHight20,
                   ],
                 ),
               ),

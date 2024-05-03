@@ -18,13 +18,10 @@ class CategoriesGridview extends StatelessWidget {
   Widget build(BuildContext context) {
     context.read<CategoryBloc>().add(CategoryEvent());
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 30),
       decoration: BoxDecoration(
-         color: Colors.green[100],
-         borderRadius: BorderRadius.circular(30),
-         
+        color: Colors.grey.shade200,
+        borderRadius: BorderRadius.circular(30),
       ),
-     
       child: BlocBuilder<CategoryBloc, CategoryState>(
         builder: (context, state) {
           if (state.categories.isEmpty) {
@@ -48,14 +45,15 @@ class CategoriesGridview extends StatelessWidget {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 3, vertical: 10),
                   height: 20,
                   width: 20,
                   decoration: BoxDecoration(
-                    color: white,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(width: 2,color: Colors.grey.withOpacity(0.5))
-                  ),
+                      color: white,
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                          width: 2, color: Colors.grey.withOpacity(0.5))),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -66,7 +64,9 @@ class CategoriesGridview extends StatelessWidget {
                       Text(
                         state.categories[index].name,
                         style: const TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.bold,color: grey),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: grey),
                       )
                     ],
                   ),

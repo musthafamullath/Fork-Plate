@@ -19,7 +19,7 @@ class DishContainer extends StatelessWidget {
       margin: const EdgeInsets.all(4),
       padding: const EdgeInsets.all(6),
       width: width - (width * .8),
-      // height: height * .275,
+     
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(width: 1, color: yellowGreen),
@@ -53,14 +53,14 @@ class DishContainer extends StatelessWidget {
                 children: [Text(dish.name), Text('₹ ${dish.price}')],
               ),
               CircleAvatar(
-                radius: 18,
-                backgroundColor: Colors.red,
+                radius: 20,
+                backgroundColor: Colors.grey.shade300,
                 child: IconButton(
                   onPressed: () async {},
                   icon: const Icon(
                     Icons.favorite,
                     size: 22,
-                    color: Colors.red,
+                    color: yellowGreen,
                   ),
                 ),
               )

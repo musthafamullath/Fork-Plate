@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_fly/utils/constants.dart';
 import 'package:foodie_fly/utils/text_styles.dart';
 
 class ViewAllwidget extends StatelessWidget {
@@ -11,7 +12,7 @@ class ViewAllwidget extends StatelessWidget {
   final String text;
   final String buttonName;
   final Function()? onTap;
-  
+
   get semiBoldOrange => null;
 
   @override
@@ -22,19 +23,21 @@ class ViewAllwidget extends StatelessWidget {
       children: [
         Text(
           text,
-          style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.black87),
+          style: const TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 16, color: black),
         ),
         InkWell(
             onTap: onTap,
             child: Container(
-              padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.green[100]
-              ),
-              child: Text(
-                buttonName,
-                style: semiBoldWhite,
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.grey.shade300),
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Text(
+                  buttonName,
+                  style: regularWhite,
+                ),
               ),
             )),
       ],

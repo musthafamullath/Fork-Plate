@@ -18,11 +18,11 @@ class ScreenCategory extends StatelessWidget {
     context.read<DishBloc>().add(GetDishByCategory(categoryId: category.id));
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(90),
+        preferredSize: const Size.fromHeight(80),
         child: AppBarWidget(title: category.name),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(18),
+        padding: const EdgeInsets.all(15),
         child: BlocBuilder<DishBloc, DishState>(
           builder: (context, state) {
             if (state.isLoading) {

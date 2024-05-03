@@ -28,10 +28,10 @@ class ScreenOffer extends StatelessWidget {
     }
     return Container(
       decoration: BoxDecoration(
-        color: Colors.green[100],
+        color: Colors.grey.shade300,
         borderRadius: BorderRadius.circular(30),
       ),
-      height: height * .50,
+      height: height * .38,
       width: width * 1,
       child: CarouselSlider.builder(
         itemCount: offers.length,
@@ -39,13 +39,13 @@ class ScreenOffer extends StatelessWidget {
           return InkWell(
             onTap: () {},
             child: Container(
-              margin: const EdgeInsets.only(right: 12, top: 8),
-              width: width - (width * .4),
-              height: height * 8,
+              margin: const EdgeInsets.only(right: 5,left: 5, top: 5,bottom: 5),
+              width: width - (width * .35),
+              height: height * 7,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(23),
                 color: white,
-                border: Border.all(width: 3, color: grey.withOpacity(0.5)),
+                border: Border.all(width: 1, color: Colors.grey.shade300),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -55,8 +55,7 @@ class ScreenOffer extends StatelessWidget {
                     height: height * .200,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      border:
-                          Border.all(width: 3, color: grey.withOpacity(0.5)),
+                      
                       image: DecorationImage(
                         image: NetworkImage(offers[index].image),
                         fit: BoxFit.fill,
@@ -109,8 +108,8 @@ class ScreenOffer extends StatelessWidget {
                         ),
                         const Spacer(),
                         CircleAvatar(
-                          radius: 21,
-                          backgroundColor: grey.withOpacity(0.5),
+                          radius: 20,
+                          backgroundColor: Colors.grey.shade300,
                           child: CircleAvatar(
                             radius: 18,
                             backgroundColor: white,
@@ -130,7 +129,7 @@ class ScreenOffer extends StatelessWidget {
         },
         options: CarouselOptions(
           reverse: true,
-          height: pictureSizewidth * 0.75,
+          height: pictureSizewidth * 0.70,
           autoPlay: true,
           viewportFraction: 0.59,
           enableInfiniteScroll: true,
