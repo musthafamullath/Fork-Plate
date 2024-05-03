@@ -129,8 +129,10 @@ class ScreenProfile extends StatelessWidget {
                                 );
                               },
                               icon: CircleAvatar(
-                                backgroundColor: yellowGreen.withOpacity(0.25),
-                                child: const Icon(CupertinoIcons.right_chevron)),
+                                  backgroundColor:
+                                      yellowGreen.withOpacity(0.25),
+                                  child:
+                                      const Icon(CupertinoIcons.right_chevron)),
                             )
                           ],
                         ),
@@ -142,14 +144,65 @@ class ScreenProfile extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            const SectionHead(heading: 'Abouts'),
+                            IconButton(
+                              onPressed: () {},
+                              icon: CircleAvatar(
+                                  backgroundColor:
+                                      yellowGreen.withOpacity(0.25),
+                                  child: const Icon(
+                                    CupertinoIcons.right_chevron,
+                                  )),
+                            ),
+                          ],
+                        ),
+                        divider3,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const SectionHead(heading: 'Terms & Contention'),
+                            IconButton(
+                              onPressed: () {},
+                              icon: CircleAvatar(
+                                  backgroundColor:
+                                      yellowGreen.withOpacity(0.25),
+                                  child: const Icon(
+                                    CupertinoIcons.right_chevron,
+                                  )),
+                            ),
+                          ],
+                        ),
+                        divider3,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const SectionHead(heading: 'Privacy & Policy '),
+                            IconButton(
+                              onPressed: () {},
+                              icon: CircleAvatar(
+                                  backgroundColor:
+                                      yellowGreen.withOpacity(0.25),
+                                  child: const Icon(
+                                    CupertinoIcons.right_chevron,
+                                  )),
+                            ),
+                          ],
+                        ),
+                        divider3,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
                             const SectionHead(heading: 'LogOut'),
                             IconButton(
                               onPressed: () async {
                                 showDialogBox(context);
                               },
-                             icon: CircleAvatar(
-                                backgroundColor: yellowGreen.withOpacity(0.25),
-                                child: const Icon(CupertinoIcons.right_chevron,)),
+                              icon: CircleAvatar(
+                                  backgroundColor:
+                                      yellowGreen.withOpacity(0.25),
+                                  child: const Icon(
+                                    CupertinoIcons.right_chevron,
+                                  )),
                             ),
                           ],
                         ),
