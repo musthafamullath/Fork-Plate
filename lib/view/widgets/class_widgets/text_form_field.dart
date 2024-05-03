@@ -22,9 +22,9 @@ class TextFieldWidget extends StatelessWidget {
     return Container(
       margin:const EdgeInsets.symmetric(vertical: 5),
       decoration: BoxDecoration(
-        color: Colors.green[50],
+        color: Colors.grey.shade300,
         borderRadius: BorderRadius.circular(15),
-        border: Border.all(width: 2,color: Colors.green.shade100)
+        border: Border.all(width: 2,color: Colors.grey.shade100)
       ),
       
       child: TextFormField(

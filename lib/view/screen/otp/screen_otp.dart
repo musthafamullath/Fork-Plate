@@ -26,25 +26,28 @@ class _ScreenOTPState extends State<ScreenOTP> {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(70),
+        preferredSize: Size.fromHeight(80),
         child: AppBarWidget(
           title: "Verify OTP",
         ),
       ),
       body: Form(
         key: formKey,
-        child: Card(
-           elevation: 2,
-        margin: const EdgeInsets.all(20),
-        shadowColor: greenPointWithblue,
-        surfaceTintColor: greenPointWithblue,
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Container(
+            height: width*10/10,
+            padding: const EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              border: Border.all(width: 2,color: Colors.grey.shade300),
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(30)
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               
               children: [
-                kHight50,
+              kHight20,
                 const Text(
                   "Verify Phone Number",
                   style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),
@@ -68,7 +71,7 @@ class _ScreenOTPState extends State<ScreenOTP> {
                             width: width * .125,
                             height: 50,
                             decoration: BoxDecoration(
-                              border: Border.all(),
+                              border: Border.all(width: 2,color: Colors.grey.shade300),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: TextFormField(
@@ -84,7 +87,7 @@ class _ScreenOTPState extends State<ScreenOTP> {
                               onChanged: (value) {
                                 if (value.isNotEmpty) {
                                   FocusScope.of(context)
-                                      .requestFocus(focusNode[index + 1]);
+                                      .requestFocus(focusNode[index+1]);
                                 }
                               },
                               decoration:

@@ -36,7 +36,7 @@ class DemoUser extends StatelessWidget {
       TextSpan(
         children: [
           TextSpan(text: blackText, style: semiBoldGrey),
-          TextSpan(text: orangeText, style: semiBoldGreenGray)
+          TextSpan(text: orangeText, style: semiBoldGrey)
         ],
       ),
     );

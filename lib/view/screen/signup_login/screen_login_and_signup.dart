@@ -15,7 +15,7 @@ class ScreenLoginRestration extends StatelessWidget {
           preferredSize:
               Size.fromHeight(MediaQuery.of(context).size.height * 1.3 / 10),
           child: AppBar(
-            backgroundColor: greenPointShade800,
+            backgroundColor: yellowGreen,
             title:const Padding(
               padding:  EdgeInsets.only(top: 20),
               child:  Text(

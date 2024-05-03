@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie_fly/utils/constants.dart';
 
 class TextButtonWidget extends StatelessWidget {
   const TextButtonWidget(
@@ -20,9 +21,9 @@ class TextButtonWidget extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.green[900],
+            color: yellowGreen,
           ),
         ),
       ),

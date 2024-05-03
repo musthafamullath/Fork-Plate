@@ -27,102 +27,102 @@ class _ScreenForgotPasswordState extends State<ScreenForgotPassword> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar:const PreferredSize(preferredSize: Size.fromHeight(70), child: AppBarWidget(title: "Forgot Password")),
+      appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(80),
+          child: AppBarWidget(title: "Forgot Password")),
       body: SafeArea(
         child: Container(
-          margin: const EdgeInsets.all(20),
-          child: Card(
-            elevation: 2,
-          margin: const EdgeInsets.all(20),
-          shadowColor: greenPointWithblue,
-          surfaceTintColor: greenPointWithblue,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Form(
-                child: Column(
-                  
-                  children: [
-                   kHight50,
-                     const Text(
-                  'Forgot password',
-                  style: bigBoldBlack,
-                ),
-                kHight20,
-                const Text(
-                  'Enter you E-mail id:',
-                  style: regularGrey,
-                ),
-                kHight10,
-                    TextFieldWidget(
-                      userController: emailController,
-                      label: 'E-mail id:',
-                      inputType: TextInputType.emailAddress,
-                      obscureText: false,
-                      validator: (value) {
-                        const pattern = regexPatternForLoginAndSignUpByEmail;
-                        final regex = RegExp(pattern);
-                        if (value!.isEmpty || !regex.hasMatch(value)) {
-                          return 'Enter a valid email address';
-                        }
-                        return null;
-                      },
+          height: width*10/10,
+          margin: const EdgeInsets.all(15),
+          decoration: BoxDecoration(
+              border: Border.all(width: 2, color: Colors.grey.shade300),
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(30)),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Form(
+              child: Column(
+                children: [
+                  const Text(
+                    'Forgot password',
+                    style: bigBoldBlack,
+                  ),
+                  kHight10,
+                  const Text(
+                    'Enter your E-mail id: & Password',
+                    style: regularGrey,
+                  ),
+                  kHight10,
+                  TextFieldWidget(
+                    userController: emailController,
+                    label: 'E-mail id:',
+                    inputType: TextInputType.emailAddress,
+                    obscureText: false,
+                    validator: (value) {
+                      const pattern = regexPatternForLoginAndSignUpByEmail;
+                      final regex = RegExp(pattern);
+                      if (value!.isEmpty || !regex.hasMatch(value)) {
+                        return 'Enter a valid email address';
+                      }
+                      return null;
+                    },
+                  ),
+                  kHight10,
+                  BlocBuilder<TogglepasswordCubit, bool>(
+                    builder: (context, state) {
+                      return TextFieldWidget(
+                        userController: newPasswordController,
+                        label: 'password:',
+                        inputType: TextInputType.emailAddress,
+                        obscureText: state,
+                        suffixIcon: togglePassword(),
+                        validator: (value) {
+                          const pattern =
+                              regexPatternForLoginAndSignUpByPassword;
+                          final regex = RegExp(pattern);
+                          if (value!.isEmpty) {
+                            return 'Please enter password';
+                          }
+                          if (!regex.hasMatch(value)) {
+                            return 'Enter valid password';
+                          }
+                          return null;
+                        },
+                      );
+                    },
+                  ),
+                  kHight10,
+                  BlocBuilder<ToggleRepasswordCubit, bool>(
+                    builder: (context, state) {
+                      return TextFieldWidget(
+                        userController: renewPasswordController,
+                        label: 'Re-enter Password:',
+                        inputType: TextInputType.emailAddress,
+                        obscureText: state,
+                        suffixIcon: toggleRePassword(),
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'Re-enter password';
+                          }
+                          if (value != newPasswordController.text) {
+                            return 'Wrong password';
+                          }
+                          return null;
+                        },
+                      );
+                    },
+                  ),
+                  kHight10,
+                  Container(
+                    alignment: Alignment.center,
+                    child: ButtonWidget(
+                      width: width,
+                      height: width * 2.5 / 10,
+                      text: 'Send',
+                      onPressed: () {},
                     ),
-                    kHight10,
-                    BlocBuilder<TogglepasswordCubit, bool>(
-                      builder: (context, state) {
-                        return TextFieldWidget(
-                          userController: newPasswordController,
-                          label: 'password:',
-                          inputType: TextInputType.emailAddress,
-                          obscureText: state,
-                          suffixIcon: togglePassword(),
-                          validator: (value) {
-                            const pattern = regexPatternForLoginAndSignUpByPassword;
-                            final regex = RegExp(pattern);
-                            if (value!.isEmpty) {
-                              return 'Please enter password';
-                            }
-                            if (!regex.hasMatch(value)) {
-                              return 'Enter valid password';
-                            }
-                            return null;
-                          },
-                        );
-                      },
-                    ),
-                    kHight10,
-                    BlocBuilder<ToggleRepasswordCubit, bool>(
-                      builder: (context, state) {
-                        return TextFieldWidget(
-                          userController: renewPasswordController,
-                          label: 'Re-enter Password:',
-                          inputType: TextInputType.emailAddress,
-                          obscureText: state,
-                          suffixIcon: toggleRePassword(),
-                          validator: (value) {
-                            if (value!.isEmpty) {
-                              return 'Re-enter password';
-                            }
-                            if (value != newPasswordController.text) {
-                              return 'Wrong password';
-                            }
-                            return null;
-                          },
-                        );
-                      },
-                    ),
-                    kHight50,
-                    Container(
-                      alignment: Alignment.center,
-                      child: ButtonWidget(
-                        width: width,
-                        height: width * 2.5 / 10,
-                        text: 'Send',
-                        onPressed: () {},
-                      ),
-                    )
-                  ],
-                ),
+                  )
+                ],
               ),
             ),
           ),
