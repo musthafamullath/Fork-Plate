@@ -12,30 +12,34 @@ class SplashComponeses extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            kHight100,
-            kHight100,
-            kHight100,
-            kHight100,
+            // kHight100,
+            // kHight100,
+            // // kHight100,
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text.rich(TextSpan(children: [
                   TextSpan(
-                    text: 'Sorry,',
+                    text: 'Sorry, ',
                     style: TextStyle(
                       fontSize: 50,
-                      color: black,
+                      color: white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: 'I’m',
+                        text: ' I’m',
                         style: TextStyle(
-                          fontSize: 25,
-                          color: black,
+                          backgroundColor: black,
+                          decoration: TextDecoration.underline,
+                          decorationColor: white,
+                          decorationStyle: TextDecorationStyle.wavy,
+                          fontSize: 70,
+                          color: white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -46,14 +50,10 @@ class SplashComponeses extends StatelessWidget {
             ),
             Text.rich(
               TextSpan(
-                text: 'P(late)',
+                text: ' P(late)',
                 style: TextStyle(
-                  backgroundColor: black,
-                  decoration: TextDecoration.underline,
-                  decorationColor: yellowGreen,
-                  decorationStyle: TextDecorationStyle.wavy,
-                  fontSize: 50,
-                  color: yellowGreen,
+                  fontSize: 30,
+                  color: white,
                   fontWeight: FontWeight.bold,
                 ),
               ),

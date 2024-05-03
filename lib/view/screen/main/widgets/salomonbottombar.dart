@@ -13,7 +13,7 @@ SalomonBottomBarItem salomonbottombaritem(ImageIcon imageIcon,String  text,) {
           fontWeight: FontWeight.w500,
         ),
       ),
-      selectedColor: white,
+      selectedColor: yellowGreen,
       unselectedColor: white,
     );
   }
