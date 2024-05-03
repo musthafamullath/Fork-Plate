@@ -30,8 +30,9 @@ class ScreenRestaurants extends StatelessWidget {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  kHight10,
                   const SearchTextField(text: "Search restaurants..."),
-                  kHight20,
+                  kHight10,
                   state.restaurants.isEmpty
                       ? const Center(
                           child: Column(
@@ -66,33 +67,34 @@ class ScreenRestaurants extends StatelessWidget {
                                     );
                                   },
                                   child: Container(
-                                    margin: const EdgeInsets.only(bottom: 12),
-                                    height: height * .2,
+                                    margin: const EdgeInsets.only(bottom: 15),
+                                    height: height * .15,
+                                  
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(40),
+                                        borderRadius: BorderRadius.circular(30),
                                         border: Border.all(
-                                            width: 5,
-                                            color: Colors.green.shade200),
-                                        color: Colors.green[100],
+                                            width: 2,
+                                            color: Colors.grey.shade300),
+                                        color: Colors.grey.shade300,
                                         boxShadow: const [
                                           BoxShadow(
-                                            blurRadius: 5,
+                                            blurRadius: 2,
                                             spreadRadius: 1,
                                             blurStyle: BlurStyle.outer,
                                             color: yellowGreen,
                                           )
                                         ]),
                                     child: Padding(
-                                      padding: const EdgeInsets.only(left: 25),
+                                      padding: const EdgeInsets.only(left: 10),
                                       child: Row(
                                         children: <Widget>[
                                           kWidth10,
                                           Container(
-                                            decoration: BoxDecoration(border: Border.all(width: 5,color: Colors.green.withOpacity(0.1)),
+                                            decoration: BoxDecoration(border: Border.all(width: 2,color: Colors.grey.shade300),
                                                       shape: BoxShape.circle,),
                                             child: CircleAvatar(
-                                              radius: 60,
-                                              backgroundColor: Colors.green[50],
+                                              radius: 50,
+                                              backgroundColor: Colors.grey.shade200,
                                               child: Padding(
                                                 padding:
                                                     const EdgeInsets.all(10.0),
@@ -103,16 +105,16 @@ class ScreenRestaurants extends StatelessWidget {
                                                       child: Container(
                                                         decoration: BoxDecoration(
                                                           border: Border.all(
-                                                              width: 5,
+                                                              width: 3,
                                                               color:
-                                                                  Colors.grey.withOpacity(0.3)),
+                                                                  Colors.grey.shade300),
                                                           shape: BoxShape.circle,
                                                         ),
                                                         child: Container(
                                                           margin: const EdgeInsets
                                                               .symmetric(
-                                                              horizontal: 12,
-                                                              vertical: 12),
+                                                              horizontal: 10,
+                                                              vertical: 10),
                                                           height: height * .112,
                                                           width: width * .225,
                                                           decoration:const BoxDecoration(
@@ -126,6 +128,7 @@ class ScreenRestaurants extends StatelessWidget {
                                                       ),
                                                     ),
                                                     FadeInLeftBig(
+                                                      delay:const Duration(microseconds: 500),
                                                       child: Container(
                                                         decoration: BoxDecoration(
                                                           border: Border.all(
@@ -134,9 +137,9 @@ class ScreenRestaurants extends StatelessWidget {
                                                           shape: BoxShape.circle,
                                                         ),
                                                         child: CircleAvatar(
-                                                          radius: 20,
+                                                          radius: 16,
                                                           backgroundColor:
-                                                              Colors.green.withOpacity(0.7),
+                                                              yellowGreen.withOpacity(0.7),
                                                           child: Text(
                                                             state.restaurants[index]
                                                                 .name
@@ -145,7 +148,7 @@ class ScreenRestaurants extends StatelessWidget {
                                                             style:const TextStyle(
                                                                 fontWeight:
                                                                     FontWeight.bold,
-                                                                fontSize: 27.5,
+                                                                fontSize: 22,
                                                                 color: white),
                                                           ),
                                                         ),
@@ -165,12 +168,12 @@ class ScreenRestaurants extends StatelessWidget {
                                             children: <Widget>[
                                               Text(
                                                 state.restaurants[index].name,
-                                                style: bigBoldWhite,
+                                                style: semiBoldWhite,
                                               ),
                                               Text(
                                                 state.restaurants[index]
                                                     .description,
-                                                style: semiBoldGrey,
+                                                style: regularGrey,
                                               ),
                                             ],
                                           ),

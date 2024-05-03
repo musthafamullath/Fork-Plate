@@ -30,7 +30,7 @@ class ScreenRestaurantDishes extends StatelessWidget {
             children: <Widget>[
               SearchTextFieldForFood(
                   text: 'Search Foods...', sellerId: seller.id),
-              kHight20,
+              kHight10,
               const SectionHead(heading: 'All Dishes'),
               BlocBuilder<DishBloc, DishState>(
                 builder: (context, state) {
@@ -67,9 +67,9 @@ class ScreenRestaurantDishes extends StatelessWidget {
                                 height: height * .2,
                                 margin: const EdgeInsets.symmetric(vertical: 8),
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: grey,width:2),
+                                  border: Border.all(color: Colors.grey.shade300,width:2),
                                   borderRadius: BorderRadius.circular(20),
-                                  color: Colors.green[100],
+                                  color: Colors.grey.shade200,
                                 ),
                                 child: Row(
                                   mainAxisAlignment:
@@ -89,16 +89,16 @@ class ScreenRestaurantDishes extends StatelessWidget {
                                           children: <Widget>[
                                             Text(
                                               state.dishes[index].name,
-                                              style: bigBoldBlack,
+                                              style: semiBoldBlack,
                                               overflow: TextOverflow.fade,
                                             ),
                                             Text(
                                               '₹ ${state.dishes[index].price}',
-                                              style: boldGreen,
+                                              style: semiBoldGreen,
                                             ),
                                             Text(
                                               'Only ${state.dishes[index].quantity}s left',
-                                              style: semiBoldBlack,
+                                              style: semiBoldGrey,
                                               overflow: TextOverflow.fade,
                                             ),
                                             Text(
