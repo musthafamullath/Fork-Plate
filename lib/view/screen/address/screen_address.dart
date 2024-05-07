@@ -25,12 +25,12 @@ class _ScreenAddressesState extends State<ScreenAddresses> {
     context.read<AddressBloc>().add(GetAllAddressEvent());
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(90),
+        preferredSize: Size.fromHeight(80),
         child: AppBarWidget(title: 'Address'),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(15),
           child: Column(
             children: [
               BlocBuilder<AddressBloc, AddressState>(
@@ -50,10 +50,10 @@ class _ScreenAddressesState extends State<ScreenAddresses> {
                           width: width,
                           decoration: BoxDecoration(
                             color: state.index == index
-                                ? Colors.green[100]
+                                ? Colors.grey.shade300
                                 : Colors.white,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: Colors.green),
+                            border: Border.all(color: Colors.grey.shade400 ,width: 2),
                           ),
                           child: Column(
                             children: [
@@ -96,7 +96,7 @@ class _ScreenAddressesState extends State<ScreenAddresses> {
                               kHight10,
                               Text(
                                 '${state.addresses[index].houseName}, ${state.addresses[index].street}, ${state.addresses[index].pinCode}, ${state.addresses[index].district}, ${state.addresses[index].state}, ${state.addresses[index].phone}',
-                                style: const TextStyle(fontSize: 18),
+                                style: const TextStyle(fontSize: 16),
                               )
                             ],
                           ),

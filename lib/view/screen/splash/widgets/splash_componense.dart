@@ -10,54 +10,36 @@ class SplashComponeses extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: SingleChildScrollView(
-        child: Column(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // kHight100,
-            // kHight100,
-            // // kHight100,
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text.rich(TextSpan(children: [
+            Text.rich(TextSpan(children: [
+              TextSpan(
+                text: 'FOODIE',
+                style: TextStyle(
+                  fontSize: 50,
+                  color: white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextSpan(
+                children: [
                   TextSpan(
-                    text: 'FOODIE',
+                    text: 'FLY',
                     style: TextStyle(
+                      backgroundColor: black,
+                      decoration: TextDecoration.underline,
+                      decorationColor: white,
+                      decorationStyle: TextDecorationStyle.wavy,
                       fontSize: 50,
                       color: white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'FLY',
-                        style: TextStyle(
-                          backgroundColor: black,
-                          decoration: TextDecoration.underline,
-                          decorationColor: white,
-                          decorationStyle: TextDecorationStyle.wavy,
-                          fontSize: 70,
-                          color: white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ]))
-              ],
-            ),
-            Text.rich(
-              TextSpan(
-                text: 'PEOPLE',
-                style: TextStyle(
-                  fontSize: 30,
-                  color: white,
-                  fontWeight: FontWeight.bold,
-                ),
+                ],
               ),
-            ),
+            ]))
           ],
         ),
       ),

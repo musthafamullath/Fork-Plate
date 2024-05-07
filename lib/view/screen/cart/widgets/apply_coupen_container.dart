@@ -20,15 +20,16 @@ class ApplyCouponContainer extends StatelessWidget {
       height: height * .2,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.green[100],
+        color: Colors.grey.shade200,
         borderRadius: BorderRadius.circular(20),
+        border: Border.all(width: 2,color: Colors.grey.shade300)
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
             'Earn cashback on your order.',
-            style: bigBoldBlack,
+            style: semiBoldBlack,
           ),
           const SizedBox(height: 12),
           ButtonWidget(

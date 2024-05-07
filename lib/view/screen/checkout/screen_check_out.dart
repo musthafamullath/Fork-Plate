@@ -28,16 +28,15 @@ class ScreenCheckout extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(90),
+        preferredSize: Size.fromHeight(80),
         child: AppBarWidget(title: 'Payment'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.all(15),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SectionHead(heading: 'Payment Details'),
-            kHight10,
             BlocBuilder<CartBloc, CartState>(
               builder: (context, state) {
                 if (state is! CartInitial) {
@@ -46,12 +45,12 @@ class ScreenCheckout extends StatelessWidget {
                       : 0;
                   return Container(
                     width: width,
-                    padding: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.green),
-                      color: Colors.green[100]
-                    ),
+                        borderRadius: BorderRadius.circular(20),
+                        border:
+                            Border.all(color: Colors.grey.shade300, width: 2),
+                        color: Colors.grey.shade200),
                     child: Column(
                       children: [
                         ItemRow(
@@ -59,19 +58,16 @@ class ScreenCheckout extends StatelessWidget {
                             value: state is GetAllCartItemsState
                                 ? '₹ ${state.total}'
                                 : '₹ 0'),
-                        kHight10,
-                        divider2,
+                        divider3,
                         const ItemRow(
                             keyString: 'Delivery Charge', value: 'Free'),
-                        kHight10,
-                        divider2,
+                        divider3,
                         ItemRow(
                             keyString: 'Discount',
                             value: state is GetAllCartItemsState
                                 ? '₹ ${state.discount}'
                                 : '₹ 0'),
-                        kHight10,
-                        divider2,
+                        divider3,
                         ItemRow(
                           keyString: 'Total Amount',
                           value: state is GetAllCartItemsState
@@ -86,7 +82,7 @@ class ScreenCheckout extends StatelessWidget {
                 }
               },
             ),
-            kHight20,
+            kHight10,
             const Text(
               'Select your preferred payment method to complete the transaction seamlessly.',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -97,15 +93,13 @@ class ScreenCheckout extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 4),
                   child: Container(
-                    
                     decoration: BoxDecoration(
-                      color: Colors.green[100],
-                      borderRadius: BorderRadius.circular(15)
-                    ),
+                        color: Colors.grey.shade200,
+                        borderRadius: BorderRadius.circular(15)),
                     child: DottedBorder(
                       radius: const Radius.circular(20),
                       borderType: BorderType.RRect,
-                      color: Colors.green,
+                      color: Colors.grey.shade400,
                       strokeWidth: 2,
                       dashPattern: const [5, 5],
                       child: ListTile(

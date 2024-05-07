@@ -10,6 +10,7 @@ class CartApiService{
   //-------------------------------Add To Cart--------------------------//
   Future<bool> addToCart(int dishId)async{
     final token = await getToken();
+    print('Dish id: $dishId');
     try{
       final response = await dio.post(
         '${ApiEndPoints.addToCart}$dishId',
@@ -21,11 +22,16 @@ class CartApiService{
           }
         )
       );
+      // print('xdfdfghhhhhhhhh${response.data}');
+      if(response.statusCode == 500) {
+        print('Failure: ${response.data.toString()}');
+      }
       if(response.statusCode == 200){
         return true;
-      }else{
+      }else {
         return false;
       }
+      
     }
     catch(e){
       log("👇😍${e.toString()}");

@@ -22,9 +22,9 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: greenPointShade800,
-      body: const SplashComponeses(),
+    return const Scaffold(
+      backgroundColor: yellowGreen,
+      body:  SplashComponeses(),
     );
   }
 

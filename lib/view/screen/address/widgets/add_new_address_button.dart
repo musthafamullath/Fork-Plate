@@ -17,7 +17,7 @@ class AddNewAddressButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.green[100],
+      color: Colors.grey.shade200,
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(

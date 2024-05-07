@@ -33,7 +33,7 @@ class ScreenCart extends StatelessWidget {
     return Scaffold(
       backgroundColor: white,
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(90),
+        preferredSize: Size.fromHeight(80),
         child: AppBarWidget(title: 'Cart'),
       ),
       body: BlocBuilder<CartBloc, CartState>(
@@ -48,18 +48,19 @@ class ScreenCart extends StatelessWidget {
                     )
                   : SingleChildScrollView(
                       child: Padding(
-                        padding: const EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(15),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             const SectionHead(heading: 'Added Items'),
                             Container(
-                              padding: const EdgeInsets.all(18),
+                              padding: const EdgeInsets.all(15),
                               width: width,
                               decoration: BoxDecoration(
-                                color: Colors.green[100],
-                                borderRadius: BorderRadius.circular(20),
-                              ),
+                                  color: Colors.grey.shade200,
+                                  borderRadius: BorderRadius.circular(20),
+                                  border: Border.all(
+                                      width: 2, color: Colors.grey.shade300)),
                               child: Column(
                                 children: [
                                   BlocConsumer<CartBloc, CartState>(
@@ -88,7 +89,7 @@ class ScreenCart extends StatelessWidget {
                                                         .sellerId
                                                     : 0;
                                                 return SizedBox(
-                                                  height: height * .075,
+                                                  height: height * .065,
                                                   child: Row(
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
@@ -109,7 +110,8 @@ class ScreenCart extends StatelessWidget {
                                                                         index]
                                                                     .name
                                                                 : 'Dish name',
-                                                            style: boldBlack,
+                                                            style:
+                                                                semiBoldBlack,
                                                             overflow:
                                                                 TextOverflow
                                                                     .clip,
@@ -119,17 +121,17 @@ class ScreenCart extends StatelessWidget {
                                                               ? Text(
                                                                   '₹ ${state.cartItems[index].price * state.cartItems[index].quantity}',
                                                                   style:
-                                                                      boldGreen,
+                                                                      semiBoldGreen,
                                                                 )
                                                               : Text('Price',
                                                                   style:
-                                                                      bigBoldGreen,
+                                                                      semiBoldGreen,
                                                                   overflow:
                                                                       TextOverflow
                                                                           .clip)
                                                         ],
                                                       ),
-                                                      const VerticalDivider(),
+                                                      // const VerticalDivider(),
                                                       Row(
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
@@ -158,7 +160,7 @@ class ScreenCart extends StatelessWidget {
                                                                       3),
                                                               child: InputQty(
                                                                 decoration: const QtyDecorationProps(
-                                                                    width: 15,
+                                                                    width: 10,
                                                                     border:
                                                                         InputBorder
                                                                             .none),
@@ -232,7 +234,7 @@ class ScreenCart extends StatelessWidget {
                                               },
                                               separatorBuilder:
                                                   (context, index) {
-                                                return divider1g;
+                                                return divider1;
                                               },
                                               itemCount:
                                                   state is GetAllCartItemsState
@@ -241,8 +243,7 @@ class ScreenCart extends StatelessWidget {
                                             );
                                     },
                                   ),
-                                  kHight10,
-                                  divider2,
+                                  divider3,
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -280,7 +281,7 @@ class ScreenCart extends StatelessWidget {
                                               },
                                               icon: const Icon(
                                                 CupertinoIcons.add_circled,
-                                                size: 42,
+                                                size: 32,
                                               ));
                                         },
                                       )
@@ -289,19 +290,18 @@ class ScreenCart extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            kHight20,
+                            kHight10,
                             const SectionHead(heading: 'Apply Coupon'),
-                            kHight10,
                             ApplyCouponContainer(width: width, height: height),
-                            kHight20,
-                            const SectionHead(heading: 'Bill Details'),
                             kHight10,
+                            const SectionHead(heading: 'Bill Details'),
                             Container(
                               width: width,
                               padding: const EdgeInsets.all(24),
                               decoration: BoxDecoration(
-                                color: Colors.green[100],
+                                color: Colors.grey.shade200,
                                 borderRadius: BorderRadius.circular(20),
+                                border: Border.all(width: 2,color: Colors.grey.shade300)
                               ),
                               child: Column(
                                 children: [
@@ -319,7 +319,7 @@ class ScreenCart extends StatelessWidget {
                                     },
                                   ),
                                   kHight10,
-                                  divider1,
+                                  divider3,
                                   ItemRow(
                                     keyString: 'Delivery fee :',
                                     value: 'free',
@@ -328,7 +328,7 @@ class ScreenCart extends StatelessWidget {
                                     color: grey,
                                   ),
                                   kHight10,
-                                  divider1,
+                                  divider3,
                                   BlocBuilder<CartBloc, CartState>(
                                     buildWhen: (previous, current) =>
                                         current is! CartInitial,
@@ -345,14 +345,14 @@ class ScreenCart extends StatelessWidget {
                                       return ItemRow(
                                         width: 5,
                                         thickness: width * 1 / 200,
-                                        color: grey,
+                                        color: Colors.grey,
                                         keyString: 'Discount :',
                                         value: '₹ 0',
                                       );
                                     },
                                   ),
-                                  kHight10,
-                                  divider1,
+                                  
+                                  divider3,
                                   kHight10,
                                   BlocBuilder<CartBloc, CartState>(
                                     buildWhen: (previous, current) =>
@@ -377,16 +377,17 @@ class ScreenCart extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            kHight20,
-                            const SectionHead(heading: 'Add Or Select Address'),
                             kHight10,
+                            const SectionHead(heading: 'Add Or Select Address'),
+                         
                             Container(
                               width: width,
                               height: height * .25,
                               padding: const EdgeInsets.all(18),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color: Colors.green[100],
+                                color: Colors.grey.shade200,
+                                border: Border.all(width: 2,color: Colors.grey.shade300)
                               ),
                               child: Column(
                                 children: [

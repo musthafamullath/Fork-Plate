@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodie_fly/controller/blocs/profile/profile_bloc.dart';
 import 'package:foodie_fly/utils/constants.dart';
+import 'package:foodie_fly/utils/strings.dart';
 import 'package:foodie_fly/utils/text_styles.dart';
 import 'package:foodie_fly/view/screen/address/screen_address.dart';
 import 'package:foodie_fly/view/screen/home/widgets/section_head.dart';
@@ -11,6 +12,7 @@ import 'package:foodie_fly/view/screen/profile/widgets/sub_text.dart';
 import 'package:foodie_fly/view/screen/profile/widgets/updat_profile.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/app_bar_widget.dart';
 import 'package:foodie_fly/view/widgets/class_widgets/profile_span.dart';
+import 'package:foodie_fly/view/widgets/class_widgets/string_genarator.dart';
 
 class ScreenProfile extends StatelessWidget {
   const ScreenProfile({super.key});
@@ -144,9 +146,16 @@ class ScreenProfile extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const SectionHead(heading: 'Abouts'),
+                            const SectionHead(heading: 'About Us'),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                                        Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) =>
+                          StringGenarator(string: aboutUs)
+                      ),
+                    );
+                              },
                               icon: CircleAvatar(
                                   backgroundColor:
                                       yellowGreen.withOpacity(0.25),
@@ -162,7 +171,14 @@ class ScreenProfile extends StatelessWidget {
                           children: [
                             const SectionHead(heading: 'Terms & Contention'),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                           Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) =>
+                          StringGenarator(string: termsAndConditions)
+                      ),
+                    );
+                              },
                               icon: CircleAvatar(
                                   backgroundColor:
                                       yellowGreen.withOpacity(0.25),
@@ -178,7 +194,14 @@ class ScreenProfile extends StatelessWidget {
                           children: [
                             const SectionHead(heading: 'Privacy & Policy '),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                  Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) =>
+                          StringGenarator(string: privacyAndPolicy)
+                      ),
+                    );
+                              },
                               icon: CircleAvatar(
                                   backgroundColor:
                                       yellowGreen.withOpacity(0.25),

@@ -15,11 +15,11 @@ class ScreenCoupons extends StatelessWidget {
     context.read<CartBloc>().add(GetAvailableCouponsEvent());
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(56),
+        preferredSize: Size.fromHeight(80),
         child: AppBarWidget(title: 'Coupons Fun!'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(24),
+        padding: const EdgeInsets.all(15),
         child: BlocBuilder<CartBloc, CartState>(
           buildWhen: (previous, current) => current is GetAllCouponsState,
           builder: (context, state) {
